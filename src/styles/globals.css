@@ -2,200 +2,114 @@ body {
   margin: 0;
 }
 
-@keyframes letter-1-animation {
+@keyframes animation {
   50% {
-    left: 150px;
+    left: -30px;
     opacity: 0;
   }
   100% {
-    left: 180px;
+    left: 0px;
     opacity: 1;
   }
 }
 
-.letter-1 {
-  animation-name: letter-1-animation;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  opacity: 0;
-  transition: ease-in 1s;
+@keyframes dot-animation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
-@keyframes letter-2-animation {
-  50% {
-    left: 200px;
+@keyframes title-animation {
+  0% {
     opacity: 0;
   }
   100% {
-    left: 230px;
     opacity: 1;
   }
 }
 
-.letter-2 {
-  animation-name: letter-2-animation;
-  animation-duration: 1s;
-  animation-delay: 0.2s;
-  opacity: 0;
+.letter1 {
+  animation-name: animation;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
-  transition: width 2s ease-in 1s;
+  transition: width 1s ease-in-out 1s;
 }
 
-@keyframes letter-3-animation {
-  50% {
-    left: 230px;
-    opacity: 0;
-  }
-  100% {
-    left: 260px;
-    opacity: 1;
-  }
-}
-
-.letter-3 {
-  animation-name: letter-3-animation;
-  animation-duration: 1s;
-  animation-delay: 0.4s;
-  opacity: 0;
+.letter2 {
+  animation-name: animation;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
-  transition: width 2s ease-in 1s;
+  transition: width 1s ease-in-out 1s;
 }
 
-@keyframes letter-4-animation {
-  50% {
-    left: 260px;
-    opacity: 0;
-  }
-  100% {
-    left: 290px;
-    opacity: 1;
-  }
-}
-
-.letter-4 {
-  animation-name: letter-4-animation;
-  animation-duration: 1s;
-  animation-delay: 0.6s;
-  opacity: 0;
+.letter3 {
+  animation-name: animation;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
-  transition: width 2s ease-in 1s;
+  transition: width 1s ease-in-out 1s;
 }
 
-@keyframes letter-5-animation {
-  50% {
-    left: 290px;
-    opacity: 0;
-  }
-  100% {
-    left: 320px;
-    opacity: 1;
-  }
-}
-
-.letter-5 {
-  animation-name: letter-5-animation;
-  animation-duration: 1s;
-  opacity: 0;
+.letter4 {
+  animation-name: animation;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
-  transition: width 2s ease-in 1s;
+  transition: width 1s ease-in-out 1s;
 }
 
-@keyframes letter-6-animation {
-  50% {
-    left: 320px;
-    opacity: 0;
-  }
-  100% {
-    left: 350px;
-    opacity: 1;
-  }
-}
-
-.letter-6 {
-  animation-name: letter-6-animation;
-  animation-duration: 1s;
-  animation-delay: 1s;
-  opacity: 0;
+.letter5 {
+  animation-name: animation;
+  animation-duration: 0.1s;
   animation-fill-mode: forwards;
-  transition: width 2s ease-in 1s;
 }
 
-@keyframes letter-7-animation {
-  50% {
-    left: 350px;
-    opacity: 0;
-  }
-  100% {
-    left: 380px;
-    opacity: 1;
-  }
-}
-
-.letter-7 {
-  animation-name: letter-7-animation;
-  animation-duration: 1s;
-  animation-delay: 1.2s;
-  opacity: 0;
+.letter6 {
+  animation-name: animation;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
-  transition: width 2s ease-in 1s;
+  transition: width 1s ease-in-out 1s;
 }
 
-@keyframes letter-8-animation {
-  50% {
-    left: 380px;
-    opacity: 0;
-  }
-  100% {
-    left: 410px;
-    opacity: 1;
-  }
-}
-
-.letter-8 {
-  animation-name: letter-8-animation;
-  animation-duration: 1s;
-  animation-delay: 1.4s;
-  opacity: 0;
+.letter7 {
+  animation-name: animation;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
-  transition: width 2s ease-in 1s;
+  transition: width 1s ease-in-out 1s;
 }
 
-@keyframes letter-9-animation {
-  50% {
-    left: 410px;
-    opacity: 0;
-  }
-  100% {
-    left: 440px;
-    opacity: 1;
-  }
-}
-
-.letter-9 {
-  animation-name: letter-9-animation;
-  animation-duration: 1s;
-  animation-delay: 1.6s;
-  opacity: 0;
+.letter8 {
+  animation-name: animation;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
-  transition: width 2s ease-in 1s;
+  transition: width 1s ease-in-out 1s;
 }
 
-@keyframes letter-10-animation {
-  50% {
-    left: 440px;
-    opacity: 0;
-  }
-  100% {
-    left: 470px;
-    opacity: 1;
-  }
-}
-
-.letter-10 {
-  animation-name: letter-10-animation;
-  animation-duration: 1s;
-  animation-delay: 1.8s;
-  opacity: 0;
+.letter9 {
+  animation-name: animation;
+  animation-duration: 0.5s;
   animation-fill-mode: forwards;
-  transition: width 2s ease-in 1s;
+  transition: width 1s ease-in-out 1s;
+}
+
+.letter10 {
+  animation-name: animation;
+  animation-duration: 0.5s;
+  animation-fill-mode: forwards;
+  transition: width 1s ease-in-out 1s;
+}
+
+.letter11 {
+  animation: dot-animation 2s infinite;
+}
+
+.title {
+  animation-name: title-animation;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  transition: width 1s ease-in-out 1s;
 }
