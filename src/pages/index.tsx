@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Box } from "@mui/system";
 import styles from "@/styles/Home.module.css";
-import { Navbar, Intro } from "@/Components";
+import { Navbar, Intro, Resume, AboutMe } from "@/Components";
 
 export default function Home() {
   return (
@@ -16,6 +16,8 @@ export default function Home() {
         <Box>
           <Navbar />
           <Intro />
+          <AboutMe />
+          <Resume />
         </Box>
       </main>
     </>
