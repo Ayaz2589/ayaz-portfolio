@@ -7,14 +7,12 @@ const Title = () => {
     <Box>
       <Image src="/test.jpeg" layout="fill" />
       <Box
-        sx={{
-          backgroundColor: "#000",
-          width: "100%",
-          height: "100%",
-          zIndex: "1",
-          position: "absolute",
-          opacity: "0.4",
-        }}
+        backgroundColor="#000"
+        width="100%"
+        height="100%"
+        zIndex="1"
+        position="absolute"
+        opacity="0.4"
       ></Box>
     </Box>
   );

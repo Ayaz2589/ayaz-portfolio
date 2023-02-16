@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 
 const navbarActions = [
@@ -22,37 +22,22 @@ const navbarActions = [
 
 const Navbar = () => {
   return (
-    <Box
-      sx={{
-        width: "100%",
-        position: "absolute",
-        zIndex: "2",
-      }}
-    >
-      <Box
-        sx={{
-          width: "80%",
-          margin: "15px auto",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
+    <Box width="100%" position="absolute" zIndex="2">
+      <Flex width="80%" margin="15px auto" justifyContent="space-between">
         {navbarActions.map((item: { title: string; onClick: Function }) => {
           return (
-            <Box key={item.title} sx={{ borderBottom: "3px solid #fff" }}>
+            <Box key={item.title} borderBottom="3px solid #fff">
               <Button
                 variant="ghost"
-                sx={{
-                  "&:hover": { backgroundColor: "transparent" },
-                  color: "#fff",
-                }}
+                _hover={{ backgroundColor: "transparent" }}
+                color="#fff"
               >
                 {item.title}
               </Button>
             </Box>
           );
         })}
-      </Box>
+      </Flex>
     </Box>
   );
 };

@@ -1,5 +1,4 @@
-import { Box } from "@chakra-ui/react";
-import { Text } from "@chakra-ui/react";
+import { Box, Text, Flex } from "@chakra-ui/react";
 import { useRef } from "react";
 
 const outterstyle = {
@@ -39,14 +38,13 @@ const NameAnimation = () => {
 
   const handleAnimationEnd = (ref: any, className: string) => {
     if (ref.current) {
-      console.log(ref);
       ref.current.className = `${ref.current.className} ${className}`;
     }
   };
 
   return (
     <Box sx={outterstyle}>
-      <Box sx={{ display: "flex" }}>
+      <Flex>
         <Text
           className="letter1"
           sx={style}
@@ -122,7 +120,7 @@ const NameAnimation = () => {
         >
           _
         </Text>
-      </Box>
+      </Flex>
       <Box>
         <Text sx={secondaryStyle} ref={title}>
           Frontend Software Engineer
