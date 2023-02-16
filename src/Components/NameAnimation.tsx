@@ -24,19 +24,22 @@ const secondaryStyle = {
 };
 
 const NameAnimation = () => {
-  const letter2: any = useRef(null);
-  const letter3: any = useRef(null);
-  const letter4: any = useRef(null);
-  const letter5: any = useRef(null);
-  const letter6: any = useRef(null);
-  const letter7: any = useRef(null);
-  const letter8: any = useRef(null);
-  const letter9: any = useRef(null);
-  const letter10: any = useRef(null);
-  const letter11: any = useRef(null);
-  const title: any = useRef(null);
+  const letter2: React.RefObject<HTMLDivElement> = useRef(null);
+  const letter3: React.RefObject<HTMLDivElement> = useRef(null);
+  const letter4: React.RefObject<HTMLDivElement> = useRef(null);
+  const letter5: React.RefObject<HTMLDivElement> = useRef(null);
+  const letter6: React.RefObject<HTMLDivElement> = useRef(null);
+  const letter7: React.RefObject<HTMLDivElement> = useRef(null);
+  const letter8: React.RefObject<HTMLDivElement> = useRef(null);
+  const letter9: React.RefObject<HTMLDivElement> = useRef(null);
+  const letter10: React.RefObject<HTMLDivElement> = useRef(null);
+  const letter11: React.RefObject<HTMLDivElement> = useRef(null);
+  const title: React.RefObject<HTMLDivElement> = useRef(null);
 
-  const handleAnimationEnd = (ref: any, className: string) => {
+  const handleAnimationEnd = (
+    ref: React.RefObject<HTMLDivElement>,
+    className: string
+  ) => {
     if (ref.current) {
       ref.current.className = `${ref.current.className} ${className}`;
     }
