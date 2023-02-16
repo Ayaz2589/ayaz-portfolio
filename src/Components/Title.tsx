@@ -1,4 +1,5 @@
-import { Box } from "@mui/system";
+import { Box } from "@chakra-ui/react";
+
 import Image from "next/legacy/image";
 
 const Title = () => {

@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Box } from "@mui/system";
+import { Box } from "@chakra-ui/react";
 import styles from "@/styles/Home.module.css";
 import { Navbar, Intro, Resume, AboutMe } from "@/Components";
 

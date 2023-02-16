@@ -1,5 +1,5 @@
-import { Box } from "@mui/system";
-import { Button } from "@mui/material";
+import { Box } from "@chakra-ui/react";
+import { Button } from "@chakra-ui/react";
 
 const navbarActions = [
   {
@@ -41,7 +41,7 @@ const Navbar = () => {
           return (
             <Box key={item.title} sx={{ borderBottom: "3px solid #fff" }}>
               <Button
-                disableRipple
+                variant="ghost"
                 sx={{
                   "&:hover": { backgroundColor: "transparent" },
                   color: "#fff",

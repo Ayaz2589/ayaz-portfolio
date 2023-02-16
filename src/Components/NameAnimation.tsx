@@ -1,5 +1,5 @@
-import { Box } from "@mui/system";
-import { Typography } from "@mui/material";
+import { Box } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 import { useRef } from "react";
 
 const outterstyle = {
@@ -47,86 +47,86 @@ const NameAnimation = () => {
   return (
     <Box sx={outterstyle}>
       <Box sx={{ display: "flex" }}>
-        <Typography
+        <Text
           className="letter1"
           sx={style}
           onAnimationEnd={() => handleAnimationEnd(letter2, "letter2")}
         >
           A
-        </Typography>
-        <Typography
+        </Text>
+        <Text
           sx={style}
           ref={letter2}
           onAnimationEnd={() => handleAnimationEnd(letter3, "letter3")}
         >
           Y
-        </Typography>
-        <Typography
+        </Text>
+        <Text
           sx={style}
           ref={letter3}
           onAnimationEnd={() => handleAnimationEnd(letter4, "letter4")}
         >
           A
-        </Typography>
-        <Typography
+        </Text>
+        <Text
           sx={style}
           ref={letter4}
           onAnimationEnd={() => handleAnimationEnd(letter5, "letter5")}
         >
           Z
-        </Typography>
-        <Typography
+        </Text>
+        <Text
           sx={{ fontSize: "80px", color: "#fff", width: "30px" }}
           ref={letter5}
           onAnimationEnd={() => handleAnimationEnd(letter6, "letter6")}
-        ></Typography>
-        <Typography
+        ></Text>
+        <Text
           sx={style}
           ref={letter6}
           onAnimationEnd={() => handleAnimationEnd(letter7, "letter7")}
         >
           U
-        </Typography>
-        <Typography
+        </Text>
+        <Text
           sx={style}
           ref={letter7}
           onAnimationEnd={() => handleAnimationEnd(letter8, "letter8")}
         >
           D
-        </Typography>
-        <Typography
+        </Text>
+        <Text
           sx={style}
           ref={letter8}
           onAnimationEnd={() => handleAnimationEnd(letter9, "letter9")}
         >
           D
-        </Typography>
-        <Typography
+        </Text>
+        <Text
           sx={style}
           ref={letter9}
           onAnimationEnd={() => handleAnimationEnd(letter10, "letter10")}
         >
           I
-        </Typography>
-        <Typography
+        </Text>
+        <Text
           sx={style}
           ref={letter10}
           onAnimationEnd={() => handleAnimationEnd(letter11, "letter11")}
         >
           N
-        </Typography>
-        <Typography
+        </Text>
+        <Text
           sx={style}
           ref={letter11}
           onAnimationStart={() => handleAnimationEnd(title, "title")}
         >
           _
-        </Typography>
+        </Text>
       </Box>
       <Box>
-        <Typography sx={secondaryStyle} ref={title}>
+        <Text sx={secondaryStyle} ref={title}>
           Frontend Software Engineer
-        </Typography>
+        </Text>
       </Box>
     </Box>
   );

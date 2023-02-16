@@ -1,6 +1,4 @@
-import { Box } from "@mui/system";
-import Image from "next/legacy/image";
-import { Typography } from "@mui/material";
+import { Box } from "@chakra-ui/react";
 import { NameAnimation, Title } from "@/Components";
 
 const Intro = () => {
