@@ -10,6 +10,8 @@ const containerStyles = {
   border: "1px solid",
   width: "100%",
   padding: { base: "none", md: "0 9.1rem" },
+  zIndex: "1",
+  position: "relative",
 };
 
 const secondaryTitleStyle = {
