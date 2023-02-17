@@ -4,7 +4,7 @@ import { useRef } from "react";
 const style = {
   position: "relative",
   zIndex: "5",
-  fontSize: "4rem",
+  fontSize: { base: "2rem", md: "4rem" },
   color: "white",
   opacity: 0,
   fontWeight: "light",

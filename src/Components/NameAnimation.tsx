@@ -2,7 +2,6 @@ import { Box, Text, Flex } from "@chakra-ui/react";
 import { useRef } from "react";
 import { Letter } from "@/Components";
 
-
 const outterstyle = {
   position: "absolute",
   left: "10%",
@@ -12,7 +11,7 @@ const outterstyle = {
 
 const secondaryStyle = {
   zIndex: "5",
-  fontSize: "1.4rem",
+  fontSize: { base: "1rem", md: "1.4rem" },
   color: "white",
   opacity: 0,
   fontWeight: "light",
