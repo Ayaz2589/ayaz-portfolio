@@ -28,14 +28,16 @@ const navbarActions: INavbarAction[] = [
 const Navbar = () => {
   return (
     <Box width="100%" position="absolute" zIndex="2">
-      <Flex width="80%" margin="15px auto" justifyContent="space-between">
+      <Flex width="80%" margin="1rem auto" justifyContent="space-between">
         {navbarActions.map((item: INavbarAction) => {
           return (
-            <Box key={item.title} borderBottom="3px solid #fff">
+            <Box key={item.title} borderBottom="0.05em solid #fff">
               <Button
                 variant="ghost"
                 _hover={{ backgroundColor: "transparent" }}
                 color="#fff"
+                fontSize="1em"
+                fontWeight="light"
               >
                 {item.title}
               </Button>
