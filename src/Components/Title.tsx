@@ -1,11 +1,16 @@
 import { Box } from "@chakra-ui/react";
 
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 const Title = () => {
   return (
     <Box>
-      <Image src="/test.jpeg" layout="fill" />
+      <Image
+        src="/test.jpeg"
+        fill
+        style={{ objectFit: "cover" }}
+        alt="title image"
+      />
       <Box
         backgroundColor="#000"
         width="100%"

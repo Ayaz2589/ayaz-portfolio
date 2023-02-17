@@ -4,5 +4,4 @@ export { default as NameAnimation } from "./NameAnimation";
 export { default as Title } from "./Title";
 export { default as AboutMe } from "./AboutMe";
 export { default as Resume } from "./Resume";
-
-
+export { default as Letter } from "./Letter";

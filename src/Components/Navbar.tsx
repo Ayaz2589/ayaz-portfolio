@@ -31,11 +31,11 @@ const Navbar = () => {
       <Flex width="80%" margin="1rem auto" justifyContent="space-between">
         {navbarActions.map((item: INavbarAction) => {
           return (
-            <Box key={item.title} borderBottom="0.05em solid #fff">
+            <Box key={item.title} borderBottom="0.05em solid white">
               <Button
                 variant="ghost"
-                _hover={{ backgroundColor: "transparent" }}
-                color="#fff"
+                _hover={{ backgroundColor: "transparent", color: "red.100" }}
+                color="white"
                 fontSize="1em"
                 fontWeight="light"
               >
