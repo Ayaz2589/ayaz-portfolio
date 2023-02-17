@@ -2,7 +2,17 @@ import { Box, Text, Flex } from "@chakra-ui/react";
 import { useRef } from "react";
 import { Letter } from "@/Components";
 
-const secondaryStyle = {
+const containerStyles = {
+  flexDirection: "column",
+  height: "100vh",
+  minHeight: "800px",
+  justifyContent: "center",
+  border: "1px solid",
+  width: "100%",
+  padding: { base: "none", md: "0 9.1rem" },
+};
+
+const secondaryTitleStyle = {
   zIndex: "5",
   fontSize: { base: "1rem", md: "1.4rem" },
   color: "white",
@@ -51,15 +61,7 @@ const NameAnimation = ({ nameToDisplay, addSymbol }: IProps) => {
     });
 
   return (
-    <Flex
-      direction="column"
-      h="100vh"
-      minH="800px"
-      justify="center"
-      border="1px solid"
-      w="100%"
-      p={{ base: "none", md: "0 9.1rem" }}
-    >
+    <Flex sx={containerStyles}>
       <Flex justify={{ base: "center", md: "flex-start" }}>
         {lettersCollection.map((item, index) => {
           return (
@@ -75,7 +77,7 @@ const NameAnimation = ({ nameToDisplay, addSymbol }: IProps) => {
       <Flex justify={{ base: "center", md: "flex-start" }}>
         <Text
           className="secondary-title"
-          sx={secondaryStyle}
+          sx={secondaryTitleStyle}
           ref={useRef(null)}
         >
           Frontend Software Engineer
