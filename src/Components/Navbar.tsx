@@ -36,7 +36,7 @@ const Navbar = () => {
                 variant="ghost"
                 _hover={{ backgroundColor: "transparent", color: "red.100" }}
                 color="white"
-                fontSize="1em"
+                fontSize={{ base: "0.8rem", md: "1rem" }}
                 fontWeight="light"
               >
                 {item.title}
