@@ -6,7 +6,7 @@ const styles = {
   width: "80%",
   margin: "1rem auto",
   justifyContent: "space-between",
-  display: { base: "none", md: "flex" },
+  display: { base: "none", lg: "flex" },
 };
 
 const DesktopNavigation = () => {

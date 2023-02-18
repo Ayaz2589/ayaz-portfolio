@@ -8,7 +8,7 @@ const MobileNavigation = ({ handleMenuClick }: any) => {
       width="80%"
       margin="1rem auto"
       justifyContent="space-between"
-      display={{ base: "flex", md: "none" }}
+      display={{ base: "flex", lg: "none" }}
       zIndex="1"
     >
       <Button
