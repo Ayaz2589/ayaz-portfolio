@@ -1,6 +1,8 @@
-import { useState } from "react";
-import { Box, Flex } from "@chakra-ui/react";
+import { useState, useEffect } from "react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
+import { useScrollLock } from "@/utils";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
 
 interface INavbarAction {
   title: string;
@@ -53,27 +55,56 @@ const DesktopMenu = () => {
   );
 };
 
-const SideNav = () => {
+const SideNav = ({ handleMenuClick }: any) => {
+  const { lockScroll, unlockScroll } = useScrollLock();
+  useEffect(() => {
+    lockScroll();
+    return () => unlockScroll();
+  }, []);
+
+  const closeSideNav = () => {
+    const sidenav = document.getElementsByClassName("sidenav")[0];
+    if (sidenav.classList.contains("sidenav-animate-open")) {
+      sidenav.classList.replace(
+        "sidenav-animate-open",
+        "sidenav-animate-close"
+      );
+    }
+  };
+
   return (
     <Flex
-      width="60%"
+      width="250px"
       h="100vh"
-      backgroundColor="salmon"
+      backgroundColor="white"
       display={{ base: "flex", md: "none" }}
       zIndex="3"
+      direction="column"
+      className="sidenav sidenav-animate-open"
+      position="relative"
+      onAnimationEnd={() => {
+        const sidenav = document.getElementsByClassName("sidenav")[0];
+        if (sidenav.classList.contains("sidenav-animate-close")) {
+          unlockScroll();
+          handleMenuClick();
+        }
+      }}
     >
-      <Flex direction="column" justify="flex-start">
+      <Button onClick={closeSideNav}>
+        <CloseIcon />
+      </Button>
+      <Flex direction="column" mt="30px" className="side-nav">
         {navbarActions.map((item: INavbarAction) => {
           return (
             <Button
               variant="ghost"
               _hover={{ backgroundColor: "transparent" }}
-              color="white"
-              fontSize="1.7rem"
-              fontWeight="light"
-              w="70px"
+              m="1rem 0px"
+              fontWeight="slim"
             >
-              {item.title}
+              <Text fontSize="1.4rem" color="black">
+                {item.title}
+              </Text>
             </Button>
           );
         })}
@@ -98,11 +129,9 @@ const MobileMenu = ({ handleMenuClick }: any) => {
         flexDirection="column"
         variant="ghost"
         _hover={{ backgroundColor: "transparent" }}
-        onClick={handleMenuClick}
+        onClick={() => handleMenuClick()}
       >
-        <Box backgroundColor="white" w="35px" h="1px" m="3px 0px"></Box>
-        <Box backgroundColor="white" w="35px" h="1px" m="3px 0px"></Box>
-        <Box backgroundColor="white" w="35px" h="1px" m="3px 0px"></Box>
+        <HamburgerIcon fontSize="2rem" color="white" />
       </Button>
     </Flex>
   );
@@ -110,10 +139,19 @@ const MobileMenu = ({ handleMenuClick }: any) => {
 
 const Navbar = () => {
   const [isSideNaveOpen, updateSideNavState] = useState(false);
+
+  const handleMenuClick = () => {
+    if (isSideNaveOpen) {
+      updateSideNavState(false);
+    } else {
+      updateSideNavState(true);
+    }
+  };
+
   return (
     <Box width="100%" position="absolute" zIndex="2">
-      {isSideNaveOpen ? <SideNav /> : null}
-      <MobileMenu handleMenuClick={() => updateSideNavState(!isSideNaveOpen)} />
+      {isSideNaveOpen ? <SideNav handleMenuClick={handleMenuClick} /> : null}
+      <MobileMenu handleMenuClick={handleMenuClick} />
       <DesktopMenu />
     </Box>
   );

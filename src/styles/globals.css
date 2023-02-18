@@ -34,6 +34,24 @@ body {
   }
 }
 
+@keyframes side-nav-open-animation {
+  0% {
+    left: -250px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+@keyframes side-nav-close-animation {
+  0% {
+    left: 0px;
+  }
+  100% {
+    left: -250px;
+  }
+}
+
 .letter-animation {
   animation-name: animation;
   animation-duration: 0.5s;
@@ -50,4 +68,18 @@ body {
   animation-duration: 2s;
   animation-fill-mode: forwards;
   transition: width 1s ease-in-out 1s;
+}
+
+.sidenav-animate-open {
+  animation-name: side-nav-open-animation;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  transition: width 0.7s ease-in 1s;
+}
+
+.sidenav-animate-close {
+  animation-name: side-nav-close-animation;
+  animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  transition: width 0.7s ease-in 1s;
 }

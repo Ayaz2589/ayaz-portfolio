@@ -16,8 +16,8 @@ export default function Home() {
         <Box w="100%">
           <Navbar />
           <Intro />
-          {/* <AboutMe /> */}
-          {/* <Resume /> */}
+          <AboutMe />
+          <Resume />
         </Box>
       </main>
     </>
