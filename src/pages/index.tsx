@@ -17,7 +17,14 @@ import {
   CaseStudySVG,
   ResumeSVG,
   ContactSVG,
-} from "../Components/svg";
+} from "../Components/svg/NotFilled";
+import {
+  HomeFilledSVG,
+  AboutFilledSVG,
+  ResumeFilledSVG,
+  CaseStudyFilledSVG,
+  ContactFilledSVG,
+} from "@/Components/svg/Filled";
 
 import { useScrollPosition } from "@/utils";
 
