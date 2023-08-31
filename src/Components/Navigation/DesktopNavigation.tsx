@@ -1,6 +1,6 @@
 import { Box } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
-import { INavbarAction } from "@/Components/Navigation/Navbar";
+import { INavbarAction } from "@/pages/index";
 
 const styles = {
   width: "100%",
@@ -30,6 +30,7 @@ const DesktopNavigation = ({ navbarActions, scrollPosition }: IProps) => {
       {navbarActions.map((item: INavbarAction) => {
         return (
           <Box key={item.title}>
+            {/* @ts-ignore */}
             <Button
               variant="ghost"
               _hover={{ backgroundColor: "transparent", color: "red.100" }}

@@ -1,79 +1,25 @@
 import { useState } from "react";
 import { Box } from "@chakra-ui/react";
-import {
-  SideNav,
-  DesktopNavigation,
-  MobileNavigation,
-} from "@/Components/Navigation";
-
-export interface INavbarAction {
-  title: string;
-  onClick: Function;
-}
+import { DesktopNavigation, MobileNavigation } from "@/Components/Navigation";
+import { HomeSVG, AboutSVG, CaseStudySVG, ResumeSVG, ContactSVG } from "../svg";
 
 interface IProps {
-  handleAboutClick: Function;
-  handleIntroClick: Function;
-  handleResumeClick: Function;
-  handleCaseStudiesClick: Function;
-  handleContactClick: Function;
+  navbarActions: any;
+  isLargerThan800: boolean;
   scrollPosition: number;
 }
 
-const Navbar = ({
-  handleAboutClick,
-  handleIntroClick,
-  handleResumeClick,
-  handleCaseStudiesClick,
-  handleContactClick,
-  scrollPosition,
-}: IProps) => {
-  const [isSideNaveOpen, updateSideNavState] = useState(false);
-
-  const navbarActions: INavbarAction[] = [
-    {
-      title: "Home",
-      onClick: () => handleIntroClick(),
-    },
-    {
-      title: "About Me",
-      onClick: () => handleAboutClick(),
-    },
-    {
-      title: "Resume",
-      onClick: () => handleResumeClick(),
-    },
-    {
-      title: "Case Studies",
-      onClick: () => handleCaseStudiesClick(),
-    },
-    {
-      title: "Contact Me",
-      onClick: () => handleContactClick(),
-    },
-  ];
-
-  const handleMenuClick = () => {
-    if (isSideNaveOpen) {
-      updateSideNavState(false);
-    } else {
-      updateSideNavState(true);
-    }
-  };
-
+const Navbar = ({ navbarActions, isLargerThan800, scrollPosition }: IProps) => {
   return (
     <Box width="100%" position="absolute" zIndex="2">
-      {isSideNaveOpen ? (
-        <SideNav
-          handleMenuClick={handleMenuClick}
+      {isLargerThan800 ? (
+        <DesktopNavigation
           navbarActions={navbarActions}
+          scrollPosition={scrollPosition}
         />
-      ) : null}
-      <MobileNavigation handleMenuClick={handleMenuClick} />
-      <DesktopNavigation
-        navbarActions={navbarActions}
-        scrollPosition={scrollPosition}
-      />
+      ) : (
+        <MobileNavigation navbarActions={navbarActions} />
+      )}
     </Box>
   );
 };

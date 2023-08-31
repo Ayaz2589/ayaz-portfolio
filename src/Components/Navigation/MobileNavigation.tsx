@@ -1,28 +1,39 @@
-import { Flex } from "@chakra-ui/react";
-import { Button } from "@chakra-ui/react";
-import { HamburgerIcon } from "@chakra-ui/icons";
+import { Button, Box, Flex } from "@chakra-ui/react";
 
-const MobileNavigation = ({ handleMenuClick }: any) => {
+const styles = {
+  width: "100%",
+  display: "flex",
+  justifyContent: "space-around",
+  position: "fixed",
+  bottom: "0",
+  backgroundColor: "white",
+  padding: "0.2rem 10rem",
+};
+
+const MobileNavigation = ({ navbarActions }: any) => {
+  console.log(navbarActions);
   return (
-    <Flex
-      width="80%"
-      margin="1rem auto"
-      justifyContent="space-between"
-      display={{ base: "flex", lg: "none" }}
-      zIndex="1"
-    >
-      <Button
-        display="flex"
-        height="60px"
-        width="40px"
-        flexDirection="column"
-        variant="ghost"
-        _hover={{ backgroundColor: "transparent" }}
-        onClick={() => handleMenuClick()}
-      >
-        <HamburgerIcon fontSize="2rem" color="white" />
-      </Button>
-    </Flex>
+    <Box sx={styles}>
+      {navbarActions.map((item: any) => {
+        return (
+          <Box key={item.title}>
+            {/* @ts-ignore */}
+            <Button
+              sx={{ height: "4rem", width: "4rem" }}
+              variant="ghost"
+              _hover={{ backgroundColor: "transparent" }}
+              color="white"
+              fontSize={{ base: "0.8rem", md: "1rem" }}
+              fontWeight="regular"
+              // @ts-ignore
+              onClick={item.onClick}
+            >
+              {item.icon}
+            </Button>
+          </Box>
+        );
+      })}
+    </Box>
   );
 };
 

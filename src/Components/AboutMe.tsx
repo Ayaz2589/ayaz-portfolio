@@ -15,8 +15,8 @@ const style = {
 };
 
 const textStyle = {
-  width: "30%",
-  margin: "0 4rem",
+  width: { base: "90%", md: "25rem" },
+  margin: { base: "0 1rem", md: "0 4rem" },
   fontWeight: "light",
   fontSize: { base: "1rem", md: "1.15rem" },
   letterSpacing: "0.15rem",

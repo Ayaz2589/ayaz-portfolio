@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import Head from "next/head";
-import { Box } from "@chakra-ui/react";
+import { Box, useMediaQuery } from "@chakra-ui/react";
 import styles from "@/styles/Home.module.css";
 import {
   Navbar,
@@ -10,10 +10,54 @@ import {
   CaseStidies,
   Contact,
 } from "@/Components";
+import { useState } from "react";
+import {
+  HomeSVG,
+  AboutSVG,
+  CaseStudySVG,
+  ResumeSVG,
+  ContactSVG,
+} from "../Components/svg";
+
 import { useScrollPosition } from "@/utils";
+
+export interface INavbarAction {
+  title: string;
+  onClick: Function;
+  icon?: JSX.Element;
+}
 
 export default function Home() {
   const scrollPosition = useScrollPosition();
+  const [isLargerThan800] = useMediaQuery("(min-width: 900px)");
+
+  const [navbarActions, updateNavBarActions] = useState([
+    {
+      title: "Home",
+      icon: <HomeSVG />,
+      onClick: () => handleIntroClick(),
+    },
+    {
+      title: "About Me",
+      icon: <AboutSVG />,
+      onClick: () => handleAboutClick(),
+    },
+    {
+      title: "Resume",
+      icon: <ResumeSVG />,
+      onClick: () => handleResumeClick(),
+    },
+    {
+      title: "Case Studies",
+      icon: <CaseStudySVG />,
+      onClick: () => handleCaseStudiesClick(),
+    },
+    {
+      title: "Contact Me",
+      icon: <ContactSVG />,
+      onClick: () => handleContactClick(),
+    },
+  ]);
 
   const introRef = useRef(null);
   const aboutRef = useRef(null);
@@ -57,12 +101,9 @@ export default function Home() {
       <main className={styles.main}>
         <Box w="100%">
           <Navbar
-            handleAboutClick={handleAboutClick}
-            handleIntroClick={handleIntroClick}
-            handleResumeClick={handleResumeClick}
-            handleCaseStudiesClick={handleCaseStudiesClick}
-            handleContactClick={handleContactClick}
+            navbarActions={navbarActions}
             scrollPosition={scrollPosition}
+            isLargerThan800={isLargerThan800}
           />
           <Intro introRef={introRef} />
           <AboutMe scrollPosition={scrollPosition} aboutRef={aboutRef} />
