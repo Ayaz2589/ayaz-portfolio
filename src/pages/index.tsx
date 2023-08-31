@@ -23,6 +23,11 @@ export default function Home() {
     introRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleResumeClick = () => {
+    // @ts-ignore
+    resumeRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <Head>
@@ -36,11 +41,12 @@ export default function Home() {
           <Navbar
             handleAboutClick={handleAboutClick}
             handleIntroClick={handleIntroClick}
+            handleResumeClick={handleResumeClick}
             scrollPosition={scrollPosition}
           />
           <Intro introRef={introRef} />
           <AboutMe scrollPosition={scrollPosition} aboutRef={aboutRef} />
-          <Resume />
+          <Resume scrollPosition={scrollPosition} resumeRef={resumeRef} />
         </Box>
       </main>
     </>

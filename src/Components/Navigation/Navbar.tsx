@@ -14,12 +14,14 @@ export interface INavbarAction {
 interface IProps {
   handleAboutClick: Function;
   handleIntroClick: Function;
+  handleResumeClick: Function;
   scrollPosition: number;
 }
 
 const Navbar = ({
   handleAboutClick,
   handleIntroClick,
+  handleResumeClick,
   scrollPosition,
 }: IProps) => {
   const [isSideNaveOpen, updateSideNavState] = useState(false);
@@ -34,11 +36,15 @@ const Navbar = ({
       onClick: () => handleAboutClick(),
     },
     {
-      title: "Projects",
+      title: "Resume",
+      onClick: () => handleResumeClick(),
+    },
+    {
+      title: "Case Studies",
       onClick: () => {},
     },
     {
-      title: "Contact",
+      title: "Contact Me",
       onClick: () => {},
     },
   ];

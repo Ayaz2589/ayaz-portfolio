@@ -7,8 +7,13 @@ const style = {
   position: "relative",
 };
 
-const Resume = () => {
-  return <Box sx={style}></Box>;
+interface IProps {
+  scrollPosition: number;
+  resumeRef: any;
+}
+
+const Resume = ({ resumeRef, scrollPosition }: IProps) => {
+  return <Box ref={resumeRef} sx={style}></Box>;
 };
 
 export default Resume;
