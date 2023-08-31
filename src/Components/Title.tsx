@@ -6,7 +6,7 @@ const Title = () => {
   return (
     <Box>
       <Image
-        src="/test.jpeg"
+        src="/nyc.jpeg"
         fill
         style={{ objectFit: "cover" }}
         alt="title image"
