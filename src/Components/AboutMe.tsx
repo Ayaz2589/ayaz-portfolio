@@ -20,6 +20,7 @@ const textStyle = {
   fontWeight: "light",
   fontSize: { base: "1rem", md: "1.15rem" },
   letterSpacing: "0.15rem",
+  opacity: 1,
 };
 
 interface IProps {

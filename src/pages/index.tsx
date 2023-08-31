@@ -2,7 +2,14 @@ import { useRef } from "react";
 import Head from "next/head";
 import { Box } from "@chakra-ui/react";
 import styles from "@/styles/Home.module.css";
-import { Navbar, Intro, Resume, AboutMe } from "@/Components";
+import {
+  Navbar,
+  Intro,
+  Resume,
+  AboutMe,
+  CaseStidies,
+  Contact,
+} from "@/Components";
 import { useScrollPosition } from "@/utils";
 
 export default function Home() {
@@ -12,6 +19,7 @@ export default function Home() {
   const aboutRef = useRef(null);
   const resumeRef = useRef(null);
   const caseStudiesRef = useRef(null);
+  const contactRef = useRef(null);
 
   const handleAboutClick = () => {
     // @ts-ignore
@@ -28,6 +36,16 @@ export default function Home() {
     resumeRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
+  const handleCaseStudiesClick = () => {
+    // @ts-ignore
+    caseStudiesRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const handleContactClick = () => {
+    // @ts-ignore
+    contactRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <>
       <Head>
@@ -42,11 +60,18 @@ export default function Home() {
             handleAboutClick={handleAboutClick}
             handleIntroClick={handleIntroClick}
             handleResumeClick={handleResumeClick}
+            handleCaseStudiesClick={handleCaseStudiesClick}
+            handleContactClick={handleContactClick}
             scrollPosition={scrollPosition}
           />
           <Intro introRef={introRef} />
           <AboutMe scrollPosition={scrollPosition} aboutRef={aboutRef} />
           <Resume scrollPosition={scrollPosition} resumeRef={resumeRef} />
+          <CaseStidies
+            scrollPosition={scrollPosition}
+            caseStudiesRef={caseStudiesRef}
+          />
+          <Contact scrollPosition={scrollPosition} contactRef={contactRef} />
         </Box>
       </main>
     </>

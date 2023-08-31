@@ -15,6 +15,8 @@ interface IProps {
   handleAboutClick: Function;
   handleIntroClick: Function;
   handleResumeClick: Function;
+  handleCaseStudiesClick: Function;
+  handleContactClick: Function;
   scrollPosition: number;
 }
 
@@ -22,6 +24,8 @@ const Navbar = ({
   handleAboutClick,
   handleIntroClick,
   handleResumeClick,
+  handleCaseStudiesClick,
+  handleContactClick,
   scrollPosition,
 }: IProps) => {
   const [isSideNaveOpen, updateSideNavState] = useState(false);
@@ -41,11 +45,11 @@ const Navbar = ({
     },
     {
       title: "Case Studies",
-      onClick: () => {},
+      onClick: () => handleCaseStudiesClick(),
     },
     {
       title: "Contact Me",
-      onClick: () => {},
+      onClick: () => handleContactClick(),
     },
   ];
 
