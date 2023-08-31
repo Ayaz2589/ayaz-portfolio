@@ -81,6 +81,17 @@ body {
   }
 }
 
+@keyframes case-study-appear-animation {
+  0% {
+    opacity: 0;
+    top: -30px;
+  }
+  100% {
+    opacity: 1;
+    top: 0px;
+  }
+}
+
 .letter-animation {
   animation-name: animation;
   animation-duration: 0.3s;
@@ -123,6 +134,13 @@ body {
 .animate-close-desktop-nav {
   animation-name: desktop-nav-close-animation;
   animation-duration: 0.7s;
+  animation-fill-mode: forwards;
+  transition: width 0.7s ease-in 1s;
+}
+
+.case-study-animation-appear {
+  animation-name: case-study-appear-animation;
+  animation-duration: 2s;
   animation-fill-mode: forwards;
   transition: width 0.7s ease-in 1s;
 }
