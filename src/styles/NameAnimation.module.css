@@ -1,4 +1,4 @@
-@keyframes animation {
+/* @keyframes animation {
   50% {
     left: -30px;
     opacity: 0;
@@ -46,4 +46,4 @@
   animation-duration: 2s;
   animation-fill-mode: forwards;
   transition: width 1s ease-in-out 1s;
-}
+} */

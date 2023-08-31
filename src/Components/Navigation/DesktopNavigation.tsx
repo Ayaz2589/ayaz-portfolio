@@ -1,33 +1,50 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
-import { navbarActions, INavbarAction } from "@/Components/Navigation/Navbar";
+import { INavbarAction } from "@/Components/Navigation/Navbar";
 
 const styles = {
-  width: "80%",
-  margin: "1rem auto",
-  justifyContent: "space-between",
-  display: { base: "none", lg: "flex" },
+  width: "100%",
+  display: "flex",
+  justifyContent: "space-around",
+  position: "fixed",
+  backgroundColor: "transparent",
+  padding: "3rem 10rem",
 };
 
-const DesktopNavigation = () => {
+interface IProps {
+  navbarActions: any;
+  scrollPosition: number;
+}
+
+const DesktopNavigation = ({ navbarActions, scrollPosition }: IProps) => {
+  console.log(scrollPosition);
   return (
-    <Flex sx={styles}>
+    <Box
+      className={
+        scrollPosition > 100
+          ? `animate-open-desktop-nav`
+          : `animate-close-desktop-nav`
+      }
+      sx={styles}
+    >
       {navbarActions.map((item: INavbarAction) => {
         return (
-          <Box key={item.title} borderBottom="0.05em solid white">
+          <Box key={item.title}>
             <Button
               variant="ghost"
               _hover={{ backgroundColor: "transparent", color: "red.100" }}
               color="white"
               fontSize={{ base: "0.8rem", md: "1rem" }}
-              fontWeight="light"
+              fontWeight="regular"
+              // @ts-ignore
+              onClick={item.onClick}
             >
               {item.title}
             </Button>
           </Box>
         );
       })}
-    </Flex>
+    </Box>
   );
 };
 

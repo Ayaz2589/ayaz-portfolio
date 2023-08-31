@@ -28,6 +28,7 @@ const Letter = ({
   startAnimation,
 }: IProps) => {
   const nextClass = findNextClass(componentClassName);
+
   return (
     <Text
       className={

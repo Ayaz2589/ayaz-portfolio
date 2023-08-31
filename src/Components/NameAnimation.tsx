@@ -22,6 +22,8 @@ const secondaryTitleStyle = {
   fontWeight: "light",
 };
 
+const secondaryTitle = `Product Designer & Frontend Software Engineer`;
+
 interface IProps {
   nameToDisplay: string;
   addSymbol?: boolean;
@@ -68,6 +70,7 @@ const NameAnimation = ({ nameToDisplay, addSymbol }: IProps) => {
         {lettersCollection.map((item, index) => {
           return (
             <Letter
+              key={item.className}
               componentClassName={item.className}
               letter={item.letter}
               startAnimation={index === 0 ?? false}
@@ -82,7 +85,7 @@ const NameAnimation = ({ nameToDisplay, addSymbol }: IProps) => {
           sx={secondaryTitleStyle}
           ref={useRef(null)}
         >
-          Frontend Software Engineer
+          {secondaryTitle}
         </Text>
       </Flex>
     </Flex>

@@ -11,27 +11,37 @@ export interface INavbarAction {
   onClick: Function;
 }
 
-export const navbarActions: INavbarAction[] = [
-  {
-    title: "Home",
-    onClick: () => {},
-  },
-  {
-    title: "About Me",
-    onClick: () => {},
-  },
-  {
-    title: "Projects",
-    onClick: () => {},
-  },
-  {
-    title: "Contact",
-    onClick: () => {},
-  },
-];
+interface IProps {
+  handleAboutClick: Function;
+  handleIntroClick: Function;
+  scrollPosition: number;
+}
 
-const Navbar = () => {
+const Navbar = ({
+  handleAboutClick,
+  handleIntroClick,
+  scrollPosition,
+}: IProps) => {
   const [isSideNaveOpen, updateSideNavState] = useState(false);
+
+  const navbarActions: INavbarAction[] = [
+    {
+      title: "Home",
+      onClick: () => handleIntroClick(),
+    },
+    {
+      title: "About Me",
+      onClick: () => handleAboutClick(),
+    },
+    {
+      title: "Projects",
+      onClick: () => {},
+    },
+    {
+      title: "Contact",
+      onClick: () => {},
+    },
+  ];
 
   const handleMenuClick = () => {
     if (isSideNaveOpen) {
@@ -43,9 +53,17 @@ const Navbar = () => {
 
   return (
     <Box width="100%" position="absolute" zIndex="2">
-      {isSideNaveOpen ? <SideNav handleMenuClick={handleMenuClick} /> : null}
+      {isSideNaveOpen ? (
+        <SideNav
+          handleMenuClick={handleMenuClick}
+          navbarActions={navbarActions}
+        />
+      ) : null}
       <MobileNavigation handleMenuClick={handleMenuClick} />
-      <DesktopNavigation />
+      <DesktopNavigation
+        navbarActions={navbarActions}
+        scrollPosition={scrollPosition}
+      />
     </Box>
   );
 };

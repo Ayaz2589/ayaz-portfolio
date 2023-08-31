@@ -3,13 +3,18 @@ import { NameAnimation, Title } from "@/Components";
 
 const nameToDisplay = "AYAZ UDDIN";
 
-const Intro = () => {
+interface IProps {
+  introRef: any;
+}
+
+const Intro = ({ introRef }: IProps) => {
   return (
     <Box
       h="100vh"
       backgroundColor="salmon"
       minHeight="800px"
       position="relative"
+      ref={introRef}
     >
       <Title />
       <NameAnimation nameToDisplay={nameToDisplay} addSymbol={true} />

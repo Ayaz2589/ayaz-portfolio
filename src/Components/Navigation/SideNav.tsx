@@ -3,9 +3,9 @@ import { Flex, Text } from "@chakra-ui/react";
 import { Button } from "@chakra-ui/react";
 import { useScrollLock } from "@/utils";
 import { CloseIcon } from "@chakra-ui/icons";
-import { navbarActions, INavbarAction } from "@/Components/Navigation/Navbar";
+import { INavbarAction } from "@/Components/Navigation/Navbar";
 
-const SideNav = ({ handleMenuClick }: any) => {
+const SideNav = ({ handleMenuClick, navbarActions }: any) => {
   const { lockScroll, unlockScroll } = useScrollLock();
   useEffect(() => {
     lockScroll();
@@ -47,6 +47,7 @@ const SideNav = ({ handleMenuClick }: any) => {
         {navbarActions.map((item: INavbarAction) => {
           return (
             <Button
+              key={item.title}
               variant="ghost"
               _hover={{ backgroundColor: "transparent" }}
               m="1rem 0px"
