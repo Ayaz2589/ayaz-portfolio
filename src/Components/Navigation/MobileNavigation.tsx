@@ -11,7 +11,6 @@ const styles = {
 };
 
 const MobileNavigation = ({ navbarActions }: any) => {
-  console.log(navbarActions);
   return (
     <Box sx={styles}>
       {navbarActions.map((item: any) => {
