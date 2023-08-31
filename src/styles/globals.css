@@ -13,7 +13,7 @@ body {
   }
 }
 
-@keyframes paragraph-animation {
+@keyframes paragraph-appear-animation {
   0% {
     left: -90px;
     opacity: 0;
@@ -21,6 +21,17 @@ body {
   100% {
     left: 0px;
     opacity: 1;
+  }
+}
+
+@keyframes paragraph-disappear-animation {
+  0% {
+    left: 0px;
+    opacity: 1;
+  }
+  100% {
+    left: -90px;
+    opacity: 0;
   }
 }
 
@@ -120,9 +131,16 @@ body {
   transition: width 0.7s ease-in 1s;
 }
 
-.paragraph-animation {
-  animation-name: paragraph-animation;
-  animation-duration: 0s;
+.paragraph-animation-appear {
+  animation-name: paragraph-appear-animation;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transition: width 1s ease-in-out 1s;
+}
+
+.paragraph-animation-disappear {
+  animation-name: paragraph-disappear-animation;
+  animation-duration: 1s;
   animation-fill-mode: forwards;
   transition: width 1s ease-in-out 1s;
 }

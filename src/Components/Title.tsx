@@ -17,7 +17,7 @@ const Title = () => {
         height="100%"
         zIndex="1"
         position="absolute"
-        opacity="0.4"
+        opacity="0.6"
       ></Box>
     </Box>
   );

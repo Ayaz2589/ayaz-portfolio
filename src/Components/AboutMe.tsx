@@ -23,7 +23,15 @@ interface IProps {
 
 const AboutMe = ({ scrollPosition, aboutRef }: IProps) => {
   return (
-    <Box sx={style} ref={aboutRef}>
+    <Box
+      className={
+        scrollPosition > 700
+          ? `paragraph-animation-appear`
+          : `paragraph-animation-disappear`
+      }
+      sx={style}
+      ref={aboutRef}
+    >
       {/* @ts-ignore */}
       <Text sx={textStyle}>
         It is a long established fact that a reader will be distracted by the
