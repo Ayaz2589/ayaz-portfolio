@@ -1,4 +1,4 @@
-import { Box, Text, Flex } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 
 const style = {
   height: "100vh",
@@ -6,7 +6,7 @@ const style = {
   position: "relative",
   display: "flex",
   justifyContent: "center",
-  opacity: 0,
+  opacity: 1,
 };
 
 const headerStyle = {
@@ -25,11 +25,11 @@ const CaseStudies = ({ scrollPosition, caseStudiesRef }: IProps) => {
       {/* @ts-ignore */}
       <Box
         sx={headerStyle}
-        className={
-          scrollPosition > 2100
-            ? "case-study-animation-appear"
-            : "case-study-animation-appear"
-        }
+        // className={
+        //   scrollPosition > 2100
+        //     ? "case-study-animation-appear"
+        //     : "case-study-animation-appear"
+        // }
       >
         <Text fontSize="5rem">Hello!</Text>
         <Text fontSize="2rem">Want to see my case studies?</Text>
