@@ -58,29 +58,11 @@ export default function Home() {
   const caseStudiesRef = useRef(null);
   const contactRef = useRef(null);
 
-  const handleAboutClick = (title: string) => {
-    // @ts-ignore
-    aboutRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleIntroClick = (title: string) => {
-    // @ts-ignore
-    introRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleResumeClick = (title: string) => {
-    // @ts-ignore
-    resumeRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleCaseStudiesClick = (title: string) => {
-    // @ts-ignore
-    caseStudiesRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const handleContactClick = (title: string) => {
-    // @ts-ignore
-    contactRef.current.scrollIntoView({ behavior: "smooth" });
+  const handleNavIconClicked = (refToscrollTo: any, title: string) => {
+    if (!refToscrollTo) return;
+    changeIcon(title);
+    refToscrollTo.current.scrollIntoView({ behavior: "smooth" });
+    return;
   };
 
   const changeIcon = (title: string) => {
@@ -151,42 +133,27 @@ export default function Home() {
     {
       title: Title.HOME,
       icon: <HomeFilledSVG />,
-      onClick: () => {
-        changeIcon(Title.HOME);
-        handleIntroClick(Title.HOME);
-      },
+      onClick: () => handleNavIconClicked(introRef, Title.HOME),
     },
     {
       title: Title.ABOUT,
       icon: <AboutSVG />,
-      onClick: () => {
-        changeIcon(Title.ABOUT);
-        handleAboutClick(Title.ABOUT);
-      },
+      onClick: () => handleNavIconClicked(aboutRef, Title.ABOUT),
     },
     {
       title: Title.RESUME,
       icon: <ResumeSVG />,
-      onClick: () => {
-        changeIcon(Title.RESUME);
-        handleResumeClick(Title.RESUME);
-      },
+      onClick: () => handleNavIconClicked(resumeRef, Title.RESUME),
     },
     {
       title: Title.CASE_STUDIES,
       icon: <CaseStudySVG />,
-      onClick: () => {
-        changeIcon(Title.CASE_STUDIES);
-        handleCaseStudiesClick(Title.CASE_STUDIES);
-      },
+      onClick: () => handleNavIconClicked(caseStudiesRef, Title.CASE_STUDIES),
     },
     {
       title: Title.CONTACT,
       icon: <ContactSVG />,
-      onClick: () => {
-        changeIcon(Title.CONTACT);
-        handleContactClick(Title.CASE_STUDIES);
-      },
+      onClick: () => handleNavIconClicked(contactRef, Title.CONTACT),
     },
   ]);
 

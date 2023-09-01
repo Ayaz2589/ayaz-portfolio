@@ -6,6 +6,7 @@ const style = {
   position: "relative",
   display: "flex",
   justifyContent: "center",
+  opacity: 0,
 };
 
 const headerStyle = {
@@ -22,21 +23,16 @@ const CaseStudies = ({ scrollPosition, caseStudiesRef }: IProps) => {
   return (
     <Box ref={caseStudiesRef} sx={style}>
       {/* @ts-ignore */}
-      <Box sx={headerStyle}>
-        <Text
-          fontSize="5rem"
-          opacity={0}
-          className="case-study-animation-appear"
-        >
-          Hello!
-        </Text>
-        <Text
-          fontSize="2rem"
-          className="case-study-animation-appear"
-          opacity={0}
-        >
-          Want to see my case studies?
-        </Text>
+      <Box
+        sx={headerStyle}
+        className={
+          scrollPosition > 2100
+            ? "case-study-animation-appear"
+            : "case-study-animation-appear"
+        }
+      >
+        <Text fontSize="5rem">Hello!</Text>
+        <Text fontSize="2rem">Want to see my case studies?</Text>
       </Box>
     </Box>
   );

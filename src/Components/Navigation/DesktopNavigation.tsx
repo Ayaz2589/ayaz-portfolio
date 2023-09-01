@@ -17,7 +17,6 @@ interface IProps {
 }
 
 const DesktopNavigation = ({ navbarActions, scrollPosition }: IProps) => {
-  console.log(scrollPosition);
   return (
     <Box
       className={

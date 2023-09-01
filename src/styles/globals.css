@@ -84,11 +84,11 @@ body {
 @keyframes case-study-appear-animation {
   0% {
     opacity: 0;
-    top: -30px;
+    /* top: -30px; */
   }
   100% {
     opacity: 1;
-    top: 0px;
+    /* top: 0px; */
   }
 }
 
