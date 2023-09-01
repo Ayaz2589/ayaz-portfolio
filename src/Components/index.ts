@@ -7,3 +7,4 @@ export { default as Resume } from "./Resume";
 export { default as Letter } from "./Letter";
 export { default as CaseStidies } from "./CaseStudies";
 export { default as Contact } from "./Contact";
+export { default as PropertyPalLogoSVG } from "./PropertyPalLogoSVG";

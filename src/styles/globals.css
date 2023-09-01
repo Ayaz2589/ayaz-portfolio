@@ -84,11 +84,42 @@ body {
 @keyframes case-study-appear-animation {
   0% {
     opacity: 0;
-    /* top: -30px; */
+    top: -80px;
   }
   100% {
     opacity: 1;
-    /* top: 0px; */
+    top: 0px;
+  }
+}
+
+@keyframes case-study-disappear-animation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes case-study-card-appear-animation {
+  0% {
+    opacity: 0;
+    bottom: -80px;
+  }
+  100% {
+    opacity: 1;
+    bottom: 0px;
+  }
+}
+
+@keyframes case-study-card-disappear-animation {
+  0% {
+    opacity: 1;
+    bottom: 0px;
+  }
+  100% {
+    opacity: 0;
+    bottom: -80px;
   }
 }
 
@@ -140,7 +171,28 @@ body {
 
 .case-study-animation-appear {
   animation-name: case-study-appear-animation;
-  animation-duration: 2s;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  transition: width 0.7s ease-in 1s;
+}
+
+.case-study-animation-disappear {
+  animation-name: case-study-disappear-animation;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transition: width 0.7s ease-in 1s;
+}
+
+.case-study-card-animation-appear {
+  animation-name: case-study-card-appear-animation;
+  animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  transition: width 0.7s ease-in 1s;
+}
+
+.case-study-card-animation-disappear {
+  animation-name: case-study-card-disappear-animation;
+  animation-duration: 1s;
   animation-fill-mode: forwards;
   transition: width 0.7s ease-in 1s;
 }
