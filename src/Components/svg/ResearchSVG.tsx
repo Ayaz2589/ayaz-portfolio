@@ -1,10 +1,11 @@
-const ResearchSVG = () => {
+const ResearchSVG = ({ style }: any) => {
   return (
     <svg
+      style={style}
       enable-background="new 0 0 64 64"
-      height="512"
+      height="100"
       viewBox="0 0 64 64"
-      width="512"
+      width="100"
       xmlns="http://www.w3.org/2000/svg"
       id="fi_3685327"
     >

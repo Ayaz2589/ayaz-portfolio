@@ -176,7 +176,11 @@ export default function Home() {
           />
           <Intro introRef={introRef} />
           <AboutMe scrollPosition={scrollPosition} aboutRef={aboutRef} />
-          <Resume scrollPosition={scrollPosition} resumeRef={resumeRef} />
+          <Resume
+            scrollPosition={scrollPosition}
+            resumeRef={resumeRef}
+            isLargerThan800={isLargerThan800}
+          />
           <CaseStidies
             scrollPosition={scrollPosition}
             caseStudiesRef={caseStudiesRef}

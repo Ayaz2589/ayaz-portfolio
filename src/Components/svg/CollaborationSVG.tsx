@@ -1,9 +1,10 @@
-const CollaborationSVG = () => {
+const CollaborationSVG = ({ style }: any) => {
   return (
     <svg
-      height="512pt"
+      style={style}
+      height="90pt"
       viewBox="0 -6 512.00088 512"
-      width="512pt"
+      width="90pt"
       xmlns="http://www.w3.org/2000/svg"
       id="fi_1534938"
     >

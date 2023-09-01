@@ -1,11 +1,12 @@
-const FigmaSVG = () => {
+const FigmaSVG = ({ style }: any) => {
   return (
     <svg
+      style={style}
       id="fi_5968705"
       enable-background="new 0 0 512 512"
-      height="512"
+      height="100"
       viewBox="0 0 512 512"
-      width="512"
+      width="100"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g>
@@ -33,3 +34,5 @@ const FigmaSVG = () => {
     </svg>
   );
 };
+
+export default FigmaSVG;
