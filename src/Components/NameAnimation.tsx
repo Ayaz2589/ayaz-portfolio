@@ -1,4 +1,4 @@
-import { Box, Text, Flex } from "@chakra-ui/react";
+import { Text, Flex } from "@chakra-ui/react";
 import { useRef } from "react";
 import { Letter } from "@/Components";
 

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Box } from "@chakra-ui/react";
 import { DesktopNavigation, MobileNavigation } from "@/Components/Navigation";
-import { HomeSVG, AboutSVG, CaseStudySVG, ResumeSVG, ContactSVG } from "../svg";
 
 interface IProps {
   navbarActions: any;
