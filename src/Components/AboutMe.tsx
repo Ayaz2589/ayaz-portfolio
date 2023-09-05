@@ -41,16 +41,26 @@ const AboutMe = ({ scrollPosition, aboutRef }: IProps) => {
         sx={style}
       >
         {/* @ts-ignore */}
+        <Text
+          sx={{
+            ...textStyle,
+            fontSize: { base: "1rem", md: "3rem" },
+            fontWeight: "light",
+          }}
+        >
+          About Me
+        </Text>
         <Text sx={textStyle}>
-          It is a long established fact that a reader will be distracted by the`
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using Content here, content here, making it
-          look like readable English. Many desktop publishing packages and web
-          page editors now use Lorem Ipsum as their default model text, and a
-          search for lorem ipsum will uncover many web sites still in their
-          infancy. Various versions have evolved over the years, sometimes by
-          accident, sometimes on purpose (injected humour and the like).
+          With seven years of experience as a front-end developer and a recent
+          UX/UI certification from BrainStation, I've worked closely with design
+          teams, sharpening my eye for user-centric design principles.
+          Transitioning from development to product design, I bring strong
+          technical skills in HTML, CSS, and JavaScript (especially React),
+          bridging the gap between design and development effortlessly. I'm
+          adept at engaging in productive conversations with various teams,
+          thanks to my innate empathy. Additionally, I'm proficient in AI tools
+          like Chat GPT and GitHub Co-Pilot, enhancing my efficiency and
+          innovation in design.
         </Text>
       </Box>
     </Box>

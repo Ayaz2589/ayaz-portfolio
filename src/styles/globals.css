@@ -35,6 +35,50 @@ body {
   }
 }
 
+@keyframes paragraph-up-appear-animation {
+  0% {
+    bottom: -90px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes paragraph-down-disappear-animation {
+  0% {
+    bottom: 0px;
+    opacity: 1;
+  }
+  100% {
+    bottom: -90px;
+    opacity: 0;
+  }
+}
+
+@keyframes paragraph-down-appear-animation {
+  0% {
+    top: -90px;
+    opacity: 0;
+  }
+  100% {
+    top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes paragraph-up-disappear-animation {
+  0% {
+    top: 0px;
+    opacity: 0;
+  }
+  100% {
+    top: -90px;
+    opacity: 1;
+  }
+}
+
 @keyframes blink-animation {
   0% {
     opacity: 0;
@@ -81,47 +125,7 @@ body {
   }
 }
 
-@keyframes case-study-appear-animation {
-  0% {
-    opacity: 0;
-    top: -80px;
-  }
-  100% {
-    opacity: 1;
-    top: 0px;
-  }
-}
-
-@keyframes case-study-disappear-animation {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
-@keyframes case-study-card-appear-animation {
-  0% {
-    opacity: 0;
-    bottom: -80px;
-  }
-  100% {
-    opacity: 1;
-    bottom: 0px;
-  }
-}
-
-@keyframes case-study-card-disappear-animation {
-  0% {
-    opacity: 1;
-    bottom: 0px;
-  }
-  100% {
-    opacity: 0;
-    bottom: -80px;
-  }
-}
+/* OTHER ANIMATIONS ========================================= */
 
 .letter-animation {
   animation-name: animation;
@@ -141,6 +145,8 @@ body {
   transition: width 1s ease-in-out 1s;
 }
 
+/* PARAGRAPH ANIMATIONS ========================================= */
+
 .paragraph-animation-appear {
   animation-name: paragraph-appear-animation;
   animation-duration: 1s;
@@ -154,6 +160,36 @@ body {
   animation-fill-mode: forwards;
   transition: width 1s ease-in-out 1s;
 }
+
+.paragraph-animation-up-appear {
+  animation-name: paragraph-up-appear-animation;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transition: width 1s ease-in-out 1s;
+}
+
+.paragraph-animation-down-disappear {
+  animation-name: paragraph-down-disappear-animation;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transition: width 1s ease-in-out 1s;
+}
+
+.paragraph-animation-up-disappear {
+  animation-name: paragraph-up-disappear-animation;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transition: width 1s ease-in-out 1s;
+}
+
+.paragraph-animation-down-appear {
+  animation-name: paragraph-down-appear-animation;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  transition: width 1s ease-in-out 1s;
+}
+
+/* DESKTOP NAV ANIMATIONS ========================================= */
 
 .animate-open-desktop-nav {
   animation-name: desktop-nav-open-animation;
@@ -169,33 +205,7 @@ body {
   transition: width 0.7s ease-in 1s;
 }
 
-.case-study-animation-appear {
-  animation-name: case-study-appear-animation;
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
-  transition: width 0.7s ease-in 1s;
-}
-
-.case-study-animation-disappear {
-  animation-name: case-study-disappear-animation;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  transition: width 0.7s ease-in 1s;
-}
-
-.case-study-card-animation-appear {
-  animation-name: case-study-card-appear-animation;
-  animation-duration: 1.5s;
-  animation-fill-mode: forwards;
-  transition: width 0.7s ease-in 1s;
-}
-
-.case-study-card-animation-disappear {
-  animation-name: case-study-card-disappear-animation;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  transition: width 0.7s ease-in 1s;
-}
+/* PARAGRAPH DELAYED ANIMATIONS ========================================= */
 
 .paragraph-animation-appear-delay-1 {
   animation-name: paragraph-appear-animation;

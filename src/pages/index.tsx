@@ -29,11 +29,11 @@ import {
 import { useScrollPosition } from "@/utils";
 
 // scrolls to top on reload
-// if (typeof window !== "undefined") {
-//   window.onbeforeunload = function () {
-//     window.scrollTo(0, 0);
-//   };
-// }
+if (typeof window !== "undefined") {
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
+}
 
 export interface INavbarAction {
   title: string;

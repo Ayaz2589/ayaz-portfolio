@@ -127,12 +127,11 @@ const ResumeDetails = ({ resumeRef, scrollPosition }: any) => {
           </Text>
         </Container>
         <Button
-          variant="ghost"
+          colorScheme="orange"
           sx={{
-            color: "#E0921F",
-            margin: "rem 0rem",
             opacity: 0,
             position: "relative",
+            margin: "0rem 1rem",
           }}
           className={
             scrollPosition > 1500
