@@ -184,6 +184,7 @@ export default function Home() {
           <CaseStidies
             scrollPosition={scrollPosition}
             caseStudiesRef={caseStudiesRef}
+            isLargerThan800={isLargerThan800}
           />
           <Contact scrollPosition={scrollPosition} contactRef={contactRef} />
         </Box>

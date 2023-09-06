@@ -37,9 +37,14 @@ const textStyle = {
 interface IProps {
   scrollPosition: number;
   caseStudiesRef: any;
+  isLargerThan800: boolean;
 }
 
-const CaseStudies = ({ scrollPosition, caseStudiesRef }: IProps) => {
+const CaseStudies = ({
+  scrollPosition,
+  caseStudiesRef,
+  isLargerThan800,
+}: IProps) => {
   return (
     <Box ref={caseStudiesRef} sx={style}>
       <Box
@@ -60,7 +65,7 @@ const CaseStudies = ({ scrollPosition, caseStudiesRef }: IProps) => {
               : `paragraph-animation-down-disappear`
           }
         >
-          <CaseStudyDetails />
+          {isLargerThan800 ? <CaseStudyDetailsDesktop /> : null}
         </Box>
         <Box
           sx={{
@@ -79,7 +84,7 @@ const CaseStudies = ({ scrollPosition, caseStudiesRef }: IProps) => {
   );
 };
 
-const CaseStudyDetails = () => {
+const CaseStudyDetailsDesktop = () => {
   return (
     <Box position="relative">
       <Box sx={style}>

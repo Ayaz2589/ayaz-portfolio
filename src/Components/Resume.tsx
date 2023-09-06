@@ -10,7 +10,8 @@ const style = {
   height: "100vh",
   minHeight: "800px",
   display: "flex",
-  justifyContent: "center",
+  justifyContent: "space-around",
+  alignItems: { base: "none", md: "center" },
 };
 
 const mobileContainerStyle = {
@@ -55,11 +56,6 @@ const ResumeDetails = ({ resumeRef, scrollPosition }: any) => {
             sx={{
               fontSize: "3rem",
               fontWeight: "light",
-              padding: {
-                base: "1.5rem 0rem 0rem 0rem",
-                md: "5rem 0rem 0rem 0rem",
-              },
-              margin: { base: "0", md: "1.5rem 0" },
             }}
           >
             Resume
@@ -131,7 +127,7 @@ const ResumeDetails = ({ resumeRef, scrollPosition }: any) => {
           sx={{
             opacity: 0,
             position: "relative",
-            margin: "0rem 1rem",
+            margin: "2rem 0rem 0rem 1rem",
           }}
           className={
             scrollPosition > 1500
