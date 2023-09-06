@@ -5,7 +5,6 @@ import { aboutMeTitleAnimation } from "@/utils/animations";
 import { aboutMeCopy } from "@/utils/copy";
 
 const style = {
-  height: "100vh",
   backgroundColor: "transparent",
   minHeight: "800px",
   position: "relative",

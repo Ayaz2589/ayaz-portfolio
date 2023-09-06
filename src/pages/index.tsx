@@ -173,7 +173,7 @@ export default function Home() {
             scrollPosition={scrollPosition}
             isMobile={isMobile}
           />
-          <Intro introRef={introRef} />
+          <Intro introRef={introRef} isMobile={isMobile} />
           <AboutMe scrollPosition={scrollPosition} aboutRef={aboutRef} />
           <Resume
             scrollPosition={scrollPosition}

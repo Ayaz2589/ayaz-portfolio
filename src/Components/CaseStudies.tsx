@@ -12,8 +12,8 @@ import {
   caseStudyTitleAnimation,
   caseStudyAnimation,
 } from "@/utils/animations";
-import PropertyPalLogoSVG from "./PropertyPalLogoSVG";
-import JetBlueLogoSVG from "./JetBlueLogoSVG";
+import PropertyPalLogoSVG from "./svg/PropertyPalLogoSVG";
+import JetBlueLogoSVG from "./svg/JetBlueLogoSVG";
 import scrollAnimation from "@/utils/scrollAnimation";
 import { caseStudyCopy } from "@/utils/copy";
 
