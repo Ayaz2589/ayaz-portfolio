@@ -11,19 +11,34 @@ import Link from "next/link";
 import PropertyPalLogoSVG from "./PropertyPalLogoSVG";
 import JetBlueLogoSVG from "./JetBlueLogoSVG";
 
+const caseStudies = [
+  {
+    name: "Property Pal",
+    description: `A property management tool targeting multi-family home owners, with a strong emphasis on user-friendliness and affordability.`,
+    logo: <PropertyPalLogoSVG />,
+    linkToCaseStudy:
+      "https://www.figma.com/proto/YHKLRhhrPw9K2L2Rs2M92Y/Property-Pal---Presentation?page-id=0%3A1&type=design&node-id=76-1150&viewport=10136%2C7619%2C1.15&t=5L2OkM3D2eXDdgfV-1&scaling=min-zoom&starting-point-node-id=76%3A1150&mode=design",
+    isDisabled: false,
+    styles: {
+      backgroundColor: "#E0921F",
+    },
+  },
+  {
+    name: "JetBlue",
+    description: `An update of JetBlue's trip booking feature, prioritizing user-friendliness and accessibility to provide travelers with a smoother and more inclusive booking experience.`,
+    logo: <JetBlueLogoSVG />,
+    linkToCaseStudy: "",
+    isDisabled: true,
+    styles: {
+      backgroundColor: "#003876",
+    },
+  },
+];
+
 const style = {
   height: "100vh",
   minHeight: "800px",
   backgroundColor: "#eee",
-};
-
-const cardStyles = {
-  width: { base: "90%", md: "30rem" },
-  backgroundColor: "#E0921F",
-  borderRadius: "1rem",
-  margin: "1.5rem 0",
-  opacity: 0,
-  position: "relative",
 };
 
 const textStyle = {
@@ -69,15 +84,20 @@ const CaseStudies = ({
         </Box>
         <Box
           sx={{
-            width: { base: "", md: "50%" },
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
             alignItems: "center",
           }}
+          className={
+            scrollPosition > 2100
+              ? `paragraph-animation-up-appear`
+              : `paragraph-animation-down-disappear`
+          }
         >
-          <PropertyPalCaseStudy scrollPosition={scrollPosition} />
-          <JetBlueCaseStudy scrollPosition={scrollPosition} />
+          {caseStudies.map((caseStudy) => {
+            return <CaseStudyCard caseStudy={caseStudy} key={caseStudy.name} />;
+          })}
         </Box>
       </Box>
     </Box>
@@ -115,87 +135,30 @@ const CaseStudyDetailsDesktop = () => {
   );
 };
 
-const PropertyPalCaseStudy = ({ scrollPosition }: any) => {
+const CaseStudyCard = ({ caseStudy }: any) => {
   return (
     <Card
-      sx={{ ...cardStyles, opacity: 0 }}
-      className={
-        scrollPosition > 2100
-          ? `paragraph-animation-down-appear`
-          : `paragraph-animation-up-disappear`
+      backgroundColor={
+        caseStudy.isDisabled ? "#ccc" : caseStudy.styles.backgroundColor
       }
+      sx={{
+        width: { base: "90%", md: "60%" },
+        margin: "1rem 0rem",
+        borderRadius: "1rem",
+      }}
     >
-      <Link href="https://www.figma.com/proto/YHKLRhhrPw9K2L2Rs2M92Y/Property-Pal---Presentation?page-id=0%3A1&type=design&node-id=76-1150&viewport=10136%2C7619%2C1.15&t=5L2OkM3D2eXDdgfV-1&scaling=min-zoom&starting-point-node-id=76%3A1150&mode=design">
-        <CardHeader>
-          <PropertyPalLogoSVG />
-        </CardHeader>
-        <CardBody sx={{ padding: "0rem 1rem 0rem 1rem" }}>
-          <Text
-            sx={{
-              fontSize: { base: "1.2rem", md: "1.1rem" },
-              color: "white",
-              fontWeight: "bold",
-            }}
-          >
-            A property management tool targeting multi-family home owners, with
-            a strong emphasis on user-friendliness and affordability.
-          </Text>
-        </CardBody>
-        <CardFooter>
-          <Text
-            sx={{
-              fontSize: "0.8rem",
-              color: "white",
-              width: "100%",
-              textAlign: "right",
-            }}
-          >
-            Click to View
-          </Text>
-        </CardFooter>
-      </Link>
-    </Card>
-  );
-};
-
-const JetBlueCaseStudy = ({ scrollPosition }: any) => {
-  return (
-    <Card
-      sx={{ ...cardStyles, opacity: 0, backgroundColor: "#d1d1d1" }}
-      className={
-        scrollPosition > 2100
-          ? `paragraph-animation-down-appear`
-          : `paragraph-animation-up-disappear`
-      }
-    >
-      <Link href="https://www.figma.com/proto/YHKLRhhrPw9K2L2Rs2M92Y/Property-Pal---Presentation?page-id=0%3A1&type=design&node-id=76-1150&viewport=10136%2C7619%2C1.15&t=5L2OkM3D2eXDdgfV-1&scaling=min-zoom&starting-point-node-id=76%3A1150&mode=design">
-        <CardHeader>
-          <JetBlueLogoSVG />
-        </CardHeader>
-        <CardBody sx={{ padding: "0rem 1rem 0rem 1rem" }}>
-          <Text
-            sx={{
-              fontSize: { base: "1.2rem", md: "1.1rem" },
-              color: "white",
-              fontWeight: "bold",
-            }}
-          >
-            {`An update of JetBlue's trip booking feature, prioritizing
-            user-friendliness and accessibility to provide travelers with a
-            smoother and more inclusive booking experience.`}
-          </Text>
-        </CardBody>
-        <CardFooter>
-          <Text
-            sx={{
-              fontSize: "0.8rem",
-              color: "white",
-              width: "100%",
-              textAlign: "right",
-            }}
-          >
-            Will be availsable soon
-          </Text>
+      <Link href={caseStudy.linkToCaseStudy}>
+        <CardHeader>{caseStudy.logo}</CardHeader>
+        <CardBody color="white">{caseStudy.description}</CardBody>
+        <CardFooter
+          sx={{
+            display: "flex",
+            justifyContent: "flex-end",
+            fontSize: "0.8rem",
+            color: "white",
+          }}
+        >
+          {!caseStudy.isDisabled ? `Click to view` : `Coming Soon`}
         </CardFooter>
       </Link>
     </Card>

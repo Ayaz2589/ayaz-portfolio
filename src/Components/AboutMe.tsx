@@ -44,7 +44,7 @@ const AboutMe = ({ scrollPosition, aboutRef }: IProps) => {
         <Text
           sx={{
             ...textStyle,
-            fontSize: { base: "1rem", md: "3rem" },
+            fontSize: "3rem",
             fontWeight: "light",
           }}
         >

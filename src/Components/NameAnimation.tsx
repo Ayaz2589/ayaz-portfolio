@@ -22,7 +22,7 @@ const secondaryTitleStyle = {
   fontWeight: "light",
 };
 
-const secondaryTitle = `Product Designer & Frontend Software Engineer`;
+const secondaryTitle = `Frontend Software Engineer & Product Designer`;
 
 interface IProps {
   nameToDisplay: string;
