@@ -8,9 +8,14 @@ import {
 } from "@chakra-ui/react";
 import Link from "next/link";
 
+import {
+  caseStudyTitleAnimation,
+  caseStudyAnimation,
+} from "@/utils/animations";
 import PropertyPalLogoSVG from "./PropertyPalLogoSVG";
 import JetBlueLogoSVG from "./JetBlueLogoSVG";
 import scrollAnimation from "@/utils/scrollAnimation";
+import { caseStudyCopy } from "@/utils/copy";
 
 const caseStudies = [
   {
@@ -35,18 +40,6 @@ const caseStudies = [
     },
   },
 ];
-
-const titleAnimation = {
-  appear: "paragraph-animation-up-appear",
-  disappear: "paragraph-animation-down-disappear",
-  screenPosition: 2100,
-};
-
-const caseStudyAnimation = {
-  appear: "paragraph-animation-up-appear",
-  disappear: "paragraph-animation-down-disappear",
-  screenPosition: 2100,
-};
 
 const style = {
   height: "100vh",
@@ -84,7 +77,7 @@ const CaseStudies = ({ scrollPosition, caseStudiesRef, isMobile }: IProps) => {
             position: "relative",
             opacity: 0,
           }}
-          className={scrollAnimation(titleAnimation, scrollPosition)}
+          className={scrollAnimation(caseStudyTitleAnimation, scrollPosition)}
         >
           {isMobile ? (
             <CaseStudyDetailsDesktop />
@@ -137,18 +130,7 @@ const CaseStudyDetailsDesktop = () => {
         >
           Case Studies
         </Text>
-        <Text sx={textStyle}>
-          {`In my product design portfolio, I've embarked on two impactful
-          projects. The first project, "Property Pal," is an app designed to
-          simplify multi-home property management, specifically catering to
-          elderly property owners. It prioritizes user-friendliness and
-          affordability, significantly improving their property management
-          experience. In the second project, I led a comprehensive redesign of
-          JetBlue's trip booking feature, focusing on enhancing
-          user-friendliness and efficiency. This overhaul exemplifies my
-          commitment to user-centric design, ultimately elevating the usability
-          and satisfaction of travelers when planning their journeys.`}
-        </Text>
+        <Text sx={textStyle}>{caseStudyCopy}</Text>
       </Box>
     </Box>
   );

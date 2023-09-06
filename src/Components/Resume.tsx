@@ -1,10 +1,24 @@
 import { Box, Text, Container, Button } from "@chakra-ui/react";
-import { isMobile } from "react-device-detect";
 
+import { scrollAnimation } from "@/utils";
 import FigmaSVG from "./svg/FigmaSVG";
 import JavascriptSVG from "./svg/JavascriptSVG";
 import ResearchSVG from "./svg/ResearchSVG";
 import CollaborationSVG from "./svg/CollaborationSVG";
+import {
+  resumeTitleAnimation,
+  designAnimation,
+  developmentAnimation,
+  researchAnimation,
+  collaborationAnimation,
+  buttonAnimation,
+} from "@/utils/animations";
+import {
+  resumeDesignCopy,
+  resumeDevelopmentCopy,
+  resumeResearchCopy,
+  resumeCollaborationCopy,
+} from "@/utils/copy";
 
 const style = {
   height: "100vh",
@@ -46,11 +60,7 @@ const ResumeDetails = ({ resumeRef, scrollPosition }: any) => {
             opacity: 0,
             margin: "1rem 0",
           }}
-          className={
-            scrollPosition > 1500
-              ? `paragraph-animation-appear`
-              : `paragraph-animation-disappear`
-          }
+          className={scrollAnimation(resumeTitleAnimation, scrollPosition)}
         >
           <Text
             sx={{
@@ -63,64 +73,35 @@ const ResumeDetails = ({ resumeRef, scrollPosition }: any) => {
         </Container>
         <Container
           sx={{ position: "relative", opacity: 0, margin: "1.5rem 0" }}
-          className={
-            scrollPosition > 1500
-              ? `paragraph-animation-appear-delay-1`
-              : `paragraph-animation-disappear`
-          }
+          className={scrollAnimation(designAnimation, scrollPosition)}
         >
           <Text sx={{ fontSize: "1.4rem", fontWeight: "light" }}>Design</Text>
-          <Text sx={{ fontSize: "0.9rem" }}>
-            Illustration & UI Graphics, Strategy & Vision Presentation, User
-            Flows, Task Flows, Concept Sketches, Wireframes, Figma Advance
-            Features (Auto-Layout, Components, Variables, Smart Animation),
-            Rapid Prototyping using Figma.
-          </Text>
+          <Text sx={{ fontSize: "0.9rem" }}>{resumeDesignCopy}</Text>
         </Container>
         <Container
           sx={mobileContainerStyle}
-          className={
-            scrollPosition > 1500
-              ? `paragraph-animation-appear-delay-2`
-              : `paragraph-animation-disappear`
-          }
+          className={scrollAnimation(developmentAnimation, scrollPosition)}
         >
           <Text sx={{ fontSize: "1.4rem", fontWeight: "light" }}>
             Development
           </Text>
-          <Text sx={{ fontSize: "0.9rem" }}>
-            HTML, CSS, Javascript (Next.js, React, Node.js), Git, VSCode,
-            Storybook.
-          </Text>
+          <Text sx={{ fontSize: "0.9rem" }}>{resumeDevelopmentCopy}</Text>
         </Container>
         <Container
           sx={mobileContainerStyle}
-          className={
-            scrollPosition > 1500
-              ? `paragraph-animation-appear-delay-3`
-              : `paragraph-animation-disappear`
-          }
+          className={scrollAnimation(researchAnimation, scrollPosition)}
         >
           <Text sx={{ fontSize: "1.4rem", fontWeight: "light" }}>Research</Text>
-          <Text sx={{ fontSize: "0.9rem" }}>
-            Data Analysis (Data Dog, Statista), User Interviews, A/B Testing,
-            User Research Reports, User Research Presentations.
-          </Text>
+          <Text sx={{ fontSize: "0.9rem" }}>{resumeResearchCopy}</Text>
         </Container>
         <Container
           sx={mobileContainerStyle}
-          className={
-            scrollPosition > 1500
-              ? `paragraph-animation-appear-delay-4`
-              : `paragraph-animation-disappear`
-          }
+          className={scrollAnimation(collaborationAnimation, scrollPosition)}
         >
           <Text sx={{ fontSize: "1.4rem", fontWeight: "light" }}>
             Collaboration
           </Text>
-          <Text sx={{ fontSize: "0.9rem" }}>
-            Facilitaing Design Critiques, Self Starter, Agile, Scrum, JIRA
-          </Text>
+          <Text sx={{ fontSize: "0.9rem" }}>{resumeCollaborationCopy}</Text>
         </Container>
         <Button
           colorScheme="orange"
@@ -129,11 +110,7 @@ const ResumeDetails = ({ resumeRef, scrollPosition }: any) => {
             position: "relative",
             margin: "2rem 0rem 0rem 1rem",
           }}
-          className={
-            scrollPosition > 1500
-              ? `paragraph-animation-appear-delay-5`
-              : `paragraph-animation-disappear`
-          }
+          className={scrollAnimation(buttonAnimation, scrollPosition)}
         >
           View Resume
         </Button>

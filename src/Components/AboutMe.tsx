@@ -1,5 +1,8 @@
 import { Box, Text } from "@chakra-ui/react";
 import Image from "next/image";
+import { scrollAnimation } from "@/utils";
+import { aboutMeTitleAnimation } from "@/utils/animations";
+import { aboutMeCopy } from "@/utils/copy";
 
 const style = {
   height: "100vh",
@@ -33,11 +36,7 @@ const AboutMe = ({ scrollPosition, aboutRef }: IProps) => {
     <Box ref={aboutRef} position="relative">
       <AboutMeBackground />
       <Box
-        className={
-          scrollPosition > 700
-            ? `paragraph-animation-appear`
-            : `paragraph-animation-disappear`
-        }
+        className={scrollAnimation(aboutMeTitleAnimation, scrollPosition)}
         sx={style}
       >
         {/* @ts-ignore */}
@@ -50,18 +49,7 @@ const AboutMe = ({ scrollPosition, aboutRef }: IProps) => {
         >
           About Me
         </Text>
-        <Text sx={textStyle}>
-          {`With seven years of experience as a front-end developer and a recent
-          UX/UI certification from BrainStation, I've worked closely with design
-          teams, sharpening my eye for user-centric design principles.
-          Transitioning from development to product design, I bring strong
-          technical skills in HTML, CSS, and JavaScript (especially React),
-          bridging the gap between design and development effortlessly. I'm
-          adept at engaging in productive conversations with various teams,
-          thanks to my innate empathy. Additionally, I'm proficient in AI tools
-          like Chat GPT and GitHub Co-Pilot, enhancing my efficiency and
-          innovation in design.`}
-        </Text>
+        <Text sx={textStyle}>{aboutMeCopy}</Text>
       </Box>
     </Box>
   );

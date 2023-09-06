@@ -60,7 +60,6 @@ export default function Home() {
   const contactRef = useRef(null);
 
   const handleNavIconClicked = (refToscrollTo: any, title: string) => {
-    console.log(refToscrollTo);
     if (!refToscrollTo) return;
     changeIcon(title);
     refToscrollTo.current.scrollIntoView({ behavior: "smooth" });
