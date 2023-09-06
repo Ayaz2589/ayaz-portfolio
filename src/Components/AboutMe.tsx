@@ -51,7 +51,7 @@ const AboutMe = ({ scrollPosition, aboutRef }: IProps) => {
           About Me
         </Text>
         <Text sx={textStyle}>
-          With seven years of experience as a front-end developer and a recent
+          {`With seven years of experience as a front-end developer and a recent
           UX/UI certification from BrainStation, I've worked closely with design
           teams, sharpening my eye for user-centric design principles.
           Transitioning from development to product design, I bring strong
@@ -60,7 +60,7 @@ const AboutMe = ({ scrollPosition, aboutRef }: IProps) => {
           adept at engaging in productive conversations with various teams,
           thanks to my innate empathy. Additionally, I'm proficient in AI tools
           like Chat GPT and GitHub Co-Pilot, enhancing my efficiency and
-          innovation in design.
+          innovation in design.`}
         </Text>
       </Box>
     </Box>

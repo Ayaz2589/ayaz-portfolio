@@ -99,7 +99,7 @@ const CaseStudyDetailsDesktop = () => {
           Case Studies
         </Text>
         <Text sx={textStyle}>
-          In my product design portfolio, I've embarked on two impactful
+          {`In my product design portfolio, I've embarked on two impactful
           projects. The first project, "Property Pal," is an app designed to
           simplify multi-home property management, specifically catering to
           elderly property owners. It prioritizes user-friendliness and
@@ -108,7 +108,7 @@ const CaseStudyDetailsDesktop = () => {
           JetBlue's trip booking feature, focusing on enhancing
           user-friendliness and efficiency. This overhaul exemplifies my
           commitment to user-centric design, ultimately elevating the usability
-          and satisfaction of travelers when planning their journeys.
+          and satisfaction of travelers when planning their journeys.`}
         </Text>
       </Box>
     </Box>
@@ -180,9 +180,9 @@ const JetBlueCaseStudy = ({ scrollPosition }: any) => {
               fontWeight: "bold",
             }}
           >
-            An update of JetBlue's trip booking feature, prioritizing
+            {`An update of JetBlue's trip booking feature, prioritizing
             user-friendliness and accessibility to provide travelers with a
-            smoother and more inclusive booking experience.
+            smoother and more inclusive booking experience.`}
           </Text>
         </CardBody>
         <CardFooter>
