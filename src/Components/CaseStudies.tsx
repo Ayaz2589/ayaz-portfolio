@@ -10,6 +10,7 @@ import Link from "next/link";
 
 import PropertyPalLogoSVG from "./PropertyPalLogoSVG";
 import JetBlueLogoSVG from "./JetBlueLogoSVG";
+import scrollAnimation from "@/utils/scrollAnimation";
 
 const caseStudies = [
   {
@@ -34,6 +35,18 @@ const caseStudies = [
     },
   },
 ];
+
+const titleAnimation = {
+  appear: "paragraph-animation-up-appear",
+  disappear: "paragraph-animation-down-disappear",
+  screenPosition: 2100,
+};
+
+const caseStudyAnimation = {
+  appear: "paragraph-animation-up-appear",
+  disappear: "paragraph-animation-down-disappear",
+  screenPosition: 2100,
+};
 
 const style = {
   height: "100vh",
@@ -71,11 +84,7 @@ const CaseStudies = ({ scrollPosition, caseStudiesRef, isMobile }: IProps) => {
             position: "relative",
             opacity: 0,
           }}
-          className={
-            scrollPosition > 2100
-              ? `paragraph-animation-up-appear`
-              : `paragraph-animation-down-disappear`
-          }
+          className={scrollAnimation(titleAnimation, scrollPosition)}
         >
           {isMobile ? (
             <CaseStudyDetailsDesktop />
@@ -98,16 +107,14 @@ const CaseStudies = ({ scrollPosition, caseStudiesRef, isMobile }: IProps) => {
             justifyContent: "center",
             alignItems: "center",
           }}
-          className={
-            scrollPosition > 2100
-              ? `paragraph-animation-up-appear`
-              : `paragraph-animation-down-disappear`
-          }
+          className={scrollAnimation(caseStudyAnimation, scrollPosition)}
         >
           {caseStudies.map((caseStudy) => {
             return <CaseStudyCard caseStudy={caseStudy} key={caseStudy.name} />;
           })}
-          <Text sx={{ textAlign: "center", marginTop: "1rem", fontSize: "0.8rem" }}>
+          <Text
+            sx={{ textAlign: "center", marginTop: "1rem", fontSize: "0.8rem" }}
+          >
             For the best viewing experience please view on Desktop
           </Text>
         </Box>
