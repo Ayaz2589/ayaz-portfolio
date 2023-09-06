@@ -4,14 +4,14 @@ import { DesktopNavigation, MobileNavigation } from "@/Components/Navigation";
 
 interface IProps {
   navbarActions: any;
-  isLargerThan800: boolean;
+  isMobile: boolean;
   scrollPosition: number;
 }
 
-const Navbar = ({ navbarActions, isLargerThan800, scrollPosition }: IProps) => {
+const Navbar = ({ navbarActions, isMobile, scrollPosition }: IProps) => {
   return (
     <Box width="100%" position="absolute" zIndex="2">
-      {isLargerThan800 ? (
+      {isMobile ? (
         <DesktopNavigation
           navbarActions={navbarActions}
           scrollPosition={scrollPosition}

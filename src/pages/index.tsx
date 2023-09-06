@@ -51,7 +51,7 @@ enum Title {
 
 export default function Home() {
   const scrollPosition = useScrollPosition();
-  const [isLargerThan800] = useMediaQuery("(min-width: 900px)");
+  const [isMobile] = useMediaQuery("(min-width: 900px)");
 
   const introRef = useRef(null);
   const aboutRef = useRef(null);
@@ -172,19 +172,19 @@ export default function Home() {
           <Navbar
             navbarActions={navbarActions}
             scrollPosition={scrollPosition}
-            isLargerThan800={isLargerThan800}
+            isMobile={isMobile}
           />
           <Intro introRef={introRef} />
           <AboutMe scrollPosition={scrollPosition} aboutRef={aboutRef} />
           <Resume
             scrollPosition={scrollPosition}
             resumeRef={resumeRef}
-            isLargerThan800={isLargerThan800}
+            isMobile={isMobile}
           />
           <CaseStidies
             scrollPosition={scrollPosition}
             caseStudiesRef={caseStudiesRef}
-            isLargerThan800={isLargerThan800}
+            isMobile={isMobile}
           />
           <Contact scrollPosition={scrollPosition} contactRef={contactRef} />
         </Box>

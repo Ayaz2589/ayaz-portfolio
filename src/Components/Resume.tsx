@@ -23,14 +23,14 @@ const mobileContainerStyle = {
 interface IProps {
   scrollPosition: number;
   resumeRef: any;
-  isLargerThan800: boolean;
+  isMobile: boolean;
 }
 
-const Resume = ({ resumeRef, scrollPosition, isLargerThan800 }: IProps) => {
+const Resume = ({ resumeRef, scrollPosition, isMobile }: IProps) => {
   return (
     <Box ref={resumeRef} sx={style}>
       <ResumeDetails resumeRef={resumeRef} scrollPosition={scrollPosition} />
-      {isLargerThan800 ? <DesktopIcons /> : null}
+      {isMobile ? <DesktopIcons /> : null}
     </Box>
   );
 };

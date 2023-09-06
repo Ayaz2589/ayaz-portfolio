@@ -52,14 +52,10 @@ const textStyle = {
 interface IProps {
   scrollPosition: number;
   caseStudiesRef: any;
-  isLargerThan800: boolean;
+  isMobile: boolean;
 }
 
-const CaseStudies = ({
-  scrollPosition,
-  caseStudiesRef,
-  isLargerThan800,
-}: IProps) => {
+const CaseStudies = ({ scrollPosition, caseStudiesRef, isMobile }: IProps) => {
   return (
     <Box ref={caseStudiesRef} sx={style}>
       <Box
@@ -67,6 +63,7 @@ const CaseStudies = ({
           display: "flex",
           justifyContent: "space-between",
         }}
+        flexDirection={isMobile ? "row" : "column"}
       >
         <Box
           sx={{
@@ -80,7 +77,19 @@ const CaseStudies = ({
               : `paragraph-animation-down-disappear`
           }
         >
-          {isLargerThan800 ? <CaseStudyDetailsDesktop /> : null}
+          {isMobile ? (
+            <CaseStudyDetailsDesktop />
+          ) : (
+            <Text
+              sx={{
+                fontSize: "3rem",
+                fontWeight: "light",
+                padding: "1rem 0rem 0rem 1rem",
+              }}
+            >
+              Case Studies
+            </Text>
+          )}
         </Box>
         <Box
           sx={{
@@ -98,6 +107,9 @@ const CaseStudies = ({
           {caseStudies.map((caseStudy) => {
             return <CaseStudyCard caseStudy={caseStudy} key={caseStudy.name} />;
           })}
+          <Text sx={{ textAlign: "center", marginTop: "1rem", fontSize: "0.8rem" }}>
+            For the best viewing experience please view on Desktop
+          </Text>
         </Box>
       </Box>
     </Box>
