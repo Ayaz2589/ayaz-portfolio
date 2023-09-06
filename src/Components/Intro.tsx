@@ -12,7 +12,7 @@ const Intro = ({ introRef, isMobile }: IProps) => {
   return (
     <Box
       backgroundColor="salmon"
-      minHeight={isMobile ? "80vh" : "800px"}
+      minHeight={isMobile ? "600px" : "800px"}
       position="relative"
       ref={introRef}
     >
