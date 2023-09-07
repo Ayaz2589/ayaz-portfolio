@@ -48,10 +48,10 @@ const style = {
 };
 
 const textStyle = {
-  width: { base: "90%", md: "30rem" },
+  width: { base: "90%", md: "20rem", lg: "25rem", xl: "30rem", "2xl": "45rem" },
   margin: { base: "0 1rem", md: "0rem 0rem 0rem 4rem" },
   fontWeight: "light",
-  fontSize: { base: "1rem", md: "1.15rem" },
+  fontSize: { base: "1rem", lg: "1.15rem", "2xl": "1.5rem" },
   letterSpacing: "0.15rem",
 };
 
@@ -150,6 +150,7 @@ const CaseStudyCard = ({ caseStudy }: any) => {
     >
       <Link
         href={caseStudy.linkToCaseStudy}
+        target="_blank"
         style={
           caseStudy.isDisabled
             ? { cursor: "not-allowed" }

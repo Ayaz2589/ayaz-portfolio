@@ -1,4 +1,5 @@
 import { Box, Text, Button } from "@chakra-ui/react";
+import Link from "next/link";
 
 import { GmailLogoSVG, LinkedInLogoSVG, GithubLogoSVG, LaptopSVG } from "./svg";
 import { contactCopy } from "@/utils/copy";
@@ -13,7 +14,7 @@ const textStyle = {
   width: { base: "90%", md: "100%" },
   margin: { base: "0 1rem", md: "0rem 0rem 0rem 4rem" },
   fontWeight: "light",
-  fontSize: { base: "1rem", md: "1.15rem" },
+  fontSize: { base: "1rem", lg: "1.15rem", "2xl": "1.5rem" },
   letterSpacing: "0.15rem",
 };
 
@@ -51,22 +52,33 @@ const ContactMeDetails = () => {
         sx={{
           display: "flex",
           width: "80%",
-          margin: "4rem 0rem 0rem 3rem",
+          margin: "1rem 0rem 0rem 3rem",
         }}
       >
-        <ContactButton Component={GmailLogoSVG} Title="Email Me" />
-        <ContactButton Component={LinkedInLogoSVG} Title="LinkedIn" />
-        <ContactButton Component={GithubLogoSVG} Title="Github" />
+        <ContactButton
+          Component={GmailLogoSVG}
+          href="mailto:ayaz2589@gmail.com"
+        />
+        <ContactButton
+          Component={LinkedInLogoSVG}
+          href="https://www.linkedin.com/in/ayaz2589/"
+        />
+        <ContactButton
+          Component={GithubLogoSVG}
+          href="https://github.com/Ayaz2589"
+        />
       </Box>
     </Box>
   );
 };
 
-const ContactButton = ({ Component, Title }: any) => {
+const ContactButton = ({ Component, href }: any) => {
   return (
-    <Button variant="ghost" size="lg" sx={{ padding: "3rem 1rem" }}>
-      <Component />
-    </Button>
+    <Link target="_blank" href={href}>
+      <Button variant="ghost" size="lg" sx={{ padding: "3rem 1rem" }}>
+        <Component />
+      </Button>
+    </Link>
   );
 };
 
@@ -81,25 +93,27 @@ const ViewRepo = () => {
         alignItems: "center",
       }}
     >
-      <Text
-        sx={{
-          fontSize: { base: "1rem", md: "1.15rem" },
-          letterSpacing: "0.15rem",
-        }}
-      >{`Enjoyed the website? Want to see the code?`}</Text>
-      <Button
-        sx={{
-          padding: "3rem 1rem",
-          width: "20rem",
-          borderRadius: "2rem",
-          margin: "1rem",
-        }}
-      >
-        <LaptopSVG />
-        <Text sx={{ fontSize: "1.2rem", marginLeft: "1rem" }}>
-          View Repository
-        </Text>
-      </Button>
+      <Link target="_blank" href="https://github.com/Ayaz2589/ayaz-portfolio">
+        <Text
+          sx={{
+            fontSize: { base: "1rem", lg: "1.15rem", "2xl": "1.5rem" },
+            letterSpacing: "0.15rem",
+          }}
+        >{`Enjoyed the website? Want to see the code?`}</Text>
+        <Button
+          sx={{
+            padding: "3rem 1rem",
+            width: "20rem",
+            borderRadius: "2rem",
+            margin: "2rem",
+          }}
+        >
+          <LaptopSVG />
+          <Text sx={{ fontSize: "1.2rem", marginLeft: "1rem" }}>
+            View Repository
+          </Text>
+        </Button>
+      </Link>
     </Box>
   );
 };

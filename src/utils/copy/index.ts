@@ -1,13 +1,4 @@
-export const aboutMeCopy = `With seven years of experience as a front-end developer and a recent
-          UX/UI certification from BrainStation, I've worked closely with design
-          teams, sharpening my eye for user-centric design principles.
-          Transitioning from development to product design, I bring strong
-          technical skills in HTML, CSS, and JavaScript (especially React),
-          bridging the gap between design and development effortlessly. I'm
-          adept at engaging in productive conversations with various teams,
-          thanks to my innate empathy. Additionally, I'm proficient in AI tools
-          like Chat GPT and GitHub Co-Pilot, enhancing my efficiency and
-          innovation in design.`;
+export const aboutMeCopy = `With seven years of experience as both a frontend developer and a recent UX/UI certification from BrainStation, I've honed my skills in both areas. Collaborating closely with design teams, I've developed a keen eye for user-centric design principles. As a frontend developer and designer, I bring strong technical skills in HTML, CSS, and JavaScript (especially React), seamlessly bridging the gap between design and development. Thanks to my innate empathy, I excel in productive discussions with cross-functional teams. Additionally, I'm proficient in AI tools like Chat GPT and GitHub Co-Pilot, enhancing my efficiency and innovation in design. Feel free to reach out to discuss how I can contribute to your projects!`;
 
 export const resumeDesignCopy = `Illustration & UI Graphics, Strategy & Vision Presentation, User
             Flows, Task Flows, Concept Sketches, Wireframes, Figma Advance
@@ -33,5 +24,4 @@ export const caseStudyCopy = `In my product design portfolio, I've embarked on t
           commitment to user-centric design, ultimately elevating the usability
           and satisfaction of travelers when planning their journeys.`;
 
-export const contactCopy = `
-I'm open to exciting frontend developer and design opportunities! If you're looking for a skilled professional to enhance your web projects or create eye-catching designs, please don't hesitate to get in touch. I'm passionate about creating beautiful, user-friendly experiences and can't wait to collaborate with you. `;
+export const contactCopy = `With seven years of experience as both a frontend developer and a recent UX/UI certification from BrainStation, I've honed my skills in both areas. As a frontend developer and designer, I bring strong technical skills in HTML, CSS, and JavaScript (especially React), seamlessly bridging the gap between design and development. My mastery of Figma, along with proficiency in AI tools like Chat GPT and GitHub Co-Pilot, enhances my efficiency and innovation in design. Furthermore, my commitment to research and empathy for end-users ensures that every project I work on is user-centered. Feel free to reach out to discuss how I can contribute to your projects!`;

@@ -18,10 +18,10 @@ const style = {
 };
 
 const textStyle = {
-  width: { base: "90%", md: "25rem" },
+  width: { base: "90%", md: "20rem", lg: "25rem", xl: "30rem", "2xl": "45rem" },
   margin: { base: "0 1rem", md: "0 4rem" },
   fontWeight: "light",
-  fontSize: { base: "1rem", md: "1.15rem" },
+  fontSize: { base: "1rem", lg: "1.15rem", "2xl": "1.6rem" },
   letterSpacing: "0.15rem",
   opacity: 1,
 };
