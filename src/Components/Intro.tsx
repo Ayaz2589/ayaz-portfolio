@@ -5,10 +5,9 @@ const nameToDisplay = "AYAZ UDDIN";
 
 interface IProps {
   introRef: any;
-  isMobile: number
 }
 
-const Intro = ({ introRef, isMobile }: IProps) => {
+const Intro = ({ introRef }: IProps) => {
   return (
     <Box
       backgroundColor="salmon"
