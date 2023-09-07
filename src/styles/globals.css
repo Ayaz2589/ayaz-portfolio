@@ -212,7 +212,7 @@ body {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   transition: width 1s ease-in-out 1s;
-  animation-delay: 0.5s;
+  animation-delay: 0.2s;
 }
 
 .paragraph-animation-appear-delay-2 {
@@ -220,7 +220,7 @@ body {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   transition: width 1s ease-in-out 1s;
-  animation-delay: 1s;
+  animation-delay: 0.4s;
 }
 
 .paragraph-animation-appear-delay-3 {
@@ -228,7 +228,7 @@ body {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   transition: width 1s ease-in-out 1s;
-  animation-delay: 1.5s;
+  animation-delay: 0.6s;
 }
 
 .paragraph-animation-appear-delay-4 {
@@ -236,7 +236,7 @@ body {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   transition: width 1s ease-in-out 1s;
-  animation-delay: 2s;
+  animation-delay: 0.8s;
 }
 
 .paragraph-animation-appear-delay-5 {
@@ -244,5 +244,5 @@ body {
   animation-duration: 1s;
   animation-fill-mode: forwards;
   transition: width 1s ease-in-out 1s;
-  animation-delay: 2.5s;
+  animation-delay: 1s;
 }

@@ -32,3 +32,6 @@ export const caseStudyCopy = `In my product design portfolio, I've embarked on t
           user-friendliness and efficiency. This overhaul exemplifies my
           commitment to user-centric design, ultimately elevating the usability
           and satisfaction of travelers when planning their journeys.`;
+
+export const contactCopy = `
+I'm open to exciting frontend developer and design opportunities! If you're looking for a skilled professional to enhance your web projects or create eye-catching designs, please don't hesitate to get in touch. I'm passionate about creating beautiful, user-friendly experiences and can't wait to collaborate with you. `;

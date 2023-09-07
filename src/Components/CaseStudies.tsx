@@ -148,7 +148,14 @@ const CaseStudyCard = ({ caseStudy }: any) => {
         borderRadius: "1rem",
       }}
     >
-      <Link href={caseStudy.linkToCaseStudy}>
+      <Link
+        href={caseStudy.linkToCaseStudy}
+        style={
+          caseStudy.isDisabled
+            ? { cursor: "not-allowed" }
+            : { cursor: "pointer" }
+        }
+      >
         <CardHeader>{caseStudy.logo}</CardHeader>
         <CardBody color="white">{caseStudy.description}</CardBody>
         <CardFooter

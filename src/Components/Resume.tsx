@@ -1,4 +1,5 @@
 import { Box, Text, Container, Button } from "@chakra-ui/react";
+import Link from "next/link";
 
 import { scrollAnimation } from "@/utils";
 import FigmaSVG from "./svg/FigmaSVG";
@@ -103,17 +104,26 @@ const ResumeDetails = ({ resumeRef, scrollPosition }: any) => {
           </Text>
           <Text sx={{ fontSize: "0.9rem" }}>{resumeCollaborationCopy}</Text>
         </Container>
-        <Button
-          colorScheme="orange"
-          sx={{
-            opacity: 0,
-            position: "relative",
-            margin: "2rem 0rem 0rem 1rem",
-          }}
-          className={scrollAnimation(buttonAnimation, scrollPosition)}
+        <Link
+          href="https://resume.creddle.io/resume/c062hkrfrri"
+          target="_blank"
         >
-          View Resume
-        </Button>
+          {" "}
+          <Button
+            size="lg"
+            colorScheme="orange"
+            sx={{
+              opacity: 0,
+              position: "relative",
+              margin: "2rem 0rem 0rem 1rem",
+              borderRadius: "2rem",
+              boxShadow: "0px 3px 15px -8px rgba(0,0,0,0.75)",
+            }}
+            className={scrollAnimation(buttonAnimation, scrollPosition)}
+          >
+            View Resume
+          </Button>
+        </Link>
       </Box>
     </Box>
   );

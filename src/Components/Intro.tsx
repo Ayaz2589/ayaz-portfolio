@@ -5,14 +5,14 @@ const nameToDisplay = "AYAZ UDDIN";
 
 interface IProps {
   introRef: any;
-  isMobile: boolean;
+  isMobile: number
 }
 
 const Intro = ({ introRef, isMobile }: IProps) => {
   return (
     <Box
       backgroundColor="salmon"
-      minHeight={isMobile ? "600px" : "800px"}
+      minHeight="800px"
       position="relative"
       ref={introRef}
     >
