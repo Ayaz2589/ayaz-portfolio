@@ -40,13 +40,13 @@ To run this project locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/your-portfolio.git
+   git clone https://github.com/Ayaz2589/ayaz-portfolio.git
    ```
 
 2. Navigate to the project folder:
 
    ```bash
-   cd your-portfolio
+   cd ayaz-portfolio
    ```
 
 3. Install the dependencies:
