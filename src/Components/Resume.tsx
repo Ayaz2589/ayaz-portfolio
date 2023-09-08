@@ -1,10 +1,7 @@
-import { Box, Text, Container, Button } from "@chakra-ui/react";
+import { Box, Text, Button } from "@chakra-ui/react";
 import Link from "next/link";
 
 import { scrollAnimation } from "@/utils";
-import FigmaSVG from "./svg/FigmaSVG";
-import JavascriptSVG from "./svg/JavascriptSVG";
-import ResearchSVG from "./svg/ResearchSVG";
 import CollaborationSVG from "./svg/CollaborationSVG";
 import {
   resumeTitleAnimation,
@@ -25,14 +22,20 @@ const style = {
   height: "100vh",
   minHeight: "800px",
   display: "flex",
-  justifyContent: "space-around",
+  // justifyContent: "space-between",
+  margin: { base: "0 1rem", md: "0rem 0rem 0rem 4rem" },
   alignItems: { base: "none", md: "center" },
 };
 
-const mobileContainerStyle = {
-  margin: "1.5rem 0",
-  position: "relative",
-  opacity: 0,
+const skillsTextStyle = {
+  fontWeight: "light",
+  letterSpacing: "0.15rem",
+  fontSize: { base: "0.8rem", lg: "1rem", "2xl": "1.5rem" },
+};
+
+const skillsHeaderTextStyle = {
+  letterSpacing: "0.15rem",
+  fontSize: { base: "1.1rem", lg: "1.7rem", "2xl": "2rem" },
 };
 
 interface IProps {
@@ -50,81 +53,89 @@ const Resume = ({ resumeRef, scrollPosition, isMobile }: IProps) => {
   );
 };
 
+const skills = [
+  {
+    title: "Design",
+    copy: resumeDesignCopy,
+    animation: designAnimation,
+  },
+  {
+    title: "Development",
+    copy: resumeDevelopmentCopy,
+    animation: developmentAnimation,
+  },
+  {
+    title: "Research",
+    copy: resumeResearchCopy,
+    animation: researchAnimation,
+  },
+  {
+    title: "Collaboration",
+    copy: resumeCollaborationCopy,
+    animation: collaborationAnimation,
+  },
+];
+
 const ResumeDetails = ({ resumeRef, scrollPosition }: any) => {
   return (
-    <Box ref={resumeRef} sx={style}>
-      <Box>
-        <Container
+    <Box sx={{ width: { base: "85%", md: "65%" } }}>
+      <Box
+        sx={{
+          width: "100%",
+          position: "relative",
+          opacity: 0,
+          margin: "1rem 0",
+        }}
+        className={scrollAnimation(resumeTitleAnimation, scrollPosition)}
+      >
+        <Text
           sx={{
-            width: "100%",
-            position: "relative",
-            opacity: 0,
-            margin: "1rem 0",
+            fontSize: "3rem",
+            fontWeight: "light",
           }}
-          className={scrollAnimation(resumeTitleAnimation, scrollPosition)}
         >
-          <Text
-            sx={{
-              fontSize: "3rem",
-              fontWeight: "light",
-            }}
-          >
-            Resume
-          </Text>
-        </Container>
-        <Container
-          sx={{ position: "relative", opacity: 0, margin: "1.5rem 0" }}
-          className={scrollAnimation(designAnimation, scrollPosition)}
-        >
-          <Text sx={{ fontSize: "1.4rem", fontWeight: "light" }}>Design</Text>
-          <Text sx={{ fontSize: "0.9rem" }}>{resumeDesignCopy}</Text>
-        </Container>
-        <Container
-          sx={mobileContainerStyle}
-          className={scrollAnimation(developmentAnimation, scrollPosition)}
-        >
-          <Text sx={{ fontSize: "1.4rem", fontWeight: "light" }}>
-            Development
-          </Text>
-          <Text sx={{ fontSize: "0.9rem" }}>{resumeDevelopmentCopy}</Text>
-        </Container>
-        <Container
-          sx={mobileContainerStyle}
-          className={scrollAnimation(researchAnimation, scrollPosition)}
-        >
-          <Text sx={{ fontSize: "1.4rem", fontWeight: "light" }}>Research</Text>
-          <Text sx={{ fontSize: "0.9rem" }}>{resumeResearchCopy}</Text>
-        </Container>
-        <Container
-          sx={mobileContainerStyle}
-          className={scrollAnimation(collaborationAnimation, scrollPosition)}
-        >
-          <Text sx={{ fontSize: "1.4rem", fontWeight: "light" }}>
-            Collaboration
-          </Text>
-          <Text sx={{ fontSize: "0.9rem" }}>{resumeCollaborationCopy}</Text>
-        </Container>
-        <Link
-          href="https://resume.creddle.io/resume/c062hkrfrri"
-          target="_blank"
-        >
-          {" "}
-          <Button
-            size="lg"
-            colorScheme="orange"
-            sx={{
-              opacity: 0,
-              position: "relative",
-              margin: "2rem 0rem 0rem 1rem",
-              borderRadius: "2rem",
-              boxShadow: "0px 3px 15px -8px rgba(0,0,0,0.75)",
-            }}
-            className={scrollAnimation(buttonAnimation, scrollPosition)}
-          >
-            View Resume
-          </Button>
-        </Link>
+          Resume
+        </Text>
       </Box>
+      {skills.map((skill) => {
+        return (
+          <SkillSection
+            skill={skill}
+            scrollPosition={scrollPosition}
+            key={skill.title}
+          />
+        );
+      })}
+      <Link href="https://resume.creddle.io/resume/c062hkrfrri" target="_blank">
+        {" "}
+        <Button
+          size="lg"
+          colorScheme="orange"
+          sx={{
+            opacity: 0,
+            position: "relative",
+            margin: "2rem 0rem 0rem 1rem",
+            borderRadius: "2rem",
+            boxShadow: "0px 3px 15px -8px rgba(0,0,0,0.75)",
+          }}
+          className={scrollAnimation(buttonAnimation, scrollPosition)}
+        >
+          View Resume
+        </Button>
+      </Link>
+    </Box>
+  );
+};
+
+const SkillSection = ({ skill, scrollPosition }: any) => {
+  const { title, copy, animation } = skill;
+  return (
+    <Box
+      sx={{ position: "relative", opacity: 0, margin: "1.5rem 0" }}
+      className={scrollAnimation(animation, scrollPosition)}
+    >
+      <Text sx={skillsHeaderTextStyle}>{title}</Text>
+      <Text sx={skillsTextStyle}>{copy}</Text>
     </Box>
   );
 };
@@ -133,19 +144,12 @@ const DesktopIcons = () => {
   return (
     <Box
       sx={{
+        width: "35%",
         display: "flex",
         justifyContent: "center",
-        margin: "auto 0",
       }}
     >
-      <Box>
-        <FigmaSVG style={{ margin: "1rem" }} />
-        <ResearchSVG style={{ margin: "2rem 1.5rem" }} />
-      </Box>
-      <Box>
-        <CollaborationSVG style={{ margin: "1rem" }} />
-        <JavascriptSVG style={{ margin: "1rem" }} />
-      </Box>
+      <CollaborationSVG />
     </Box>
   );
 };

@@ -89,11 +89,19 @@ const ViewRepo = () => {
         display: "flex",
         width: "50%",
         flexDirection: "column",
-        justifyContent: "center",
+        // justifyContent: "center",
         alignItems: "center",
       }}
     >
-      <Link target="_blank" href="https://github.com/Ayaz2589/ayaz-portfolio">
+      <Link
+        target="_blank"
+        href="https://github.com/Ayaz2589/ayaz-portfolio"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
         <Text
           sx={{
             fontSize: { base: "1rem", lg: "1.15rem", "2xl": "1.5rem" },
@@ -105,7 +113,7 @@ const ViewRepo = () => {
             padding: "3rem 1rem",
             width: "20rem",
             borderRadius: "2rem",
-            margin: "2rem",
+            margin: "2rem auto",
           }}
         >
           <LaptopSVG />
