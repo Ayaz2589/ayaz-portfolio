@@ -20,7 +20,6 @@ Thank you for visiting my portfolio, and I look forward to discussing how I can 
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Usage](#usage)
-- [License](#license)
 - [Contact](#contact)
 
 ## About Me
@@ -66,12 +65,8 @@ npm run dev
 
 Open your browser and visit [http://localhost:3000](http://localhost:3000) to view your portfolio website.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
 ## Contact
 
-I'm always open to new opportunities and collaborations. If you'd like to get in touch, feel free to reach out to me at [your.email@example.com](mailto:ayaz2589@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/ayaz2589/).
+I'm always open to new opportunities and collaborations. If you'd like to get in touch, feel free to reach out to me at [ayaz2589@gmail.com](mailto:ayaz2589@gmail.com) or connect with me on [LinkedIn](https://www.linkedin.com/in/ayaz2589/).
 
 Thank you for visiting my portfolio website! 😊
