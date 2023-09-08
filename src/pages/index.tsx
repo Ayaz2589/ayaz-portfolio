@@ -59,7 +59,10 @@ export default function Home() {
   const caseStudiesRef = useRef(null);
   const contactRef = useRef(null);
 
-  const handleNavIconClicked = (refToscrollTo: any, title: string) => {
+  const handleNavIconClicked = (
+    refToscrollTo: any,
+    title: string
+  ) => {
     if (!refToscrollTo) return;
     changeIcon(title);
     refToscrollTo.current.scrollIntoView({ behavior: "smooth" });

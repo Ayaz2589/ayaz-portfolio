@@ -1,4 +1,4 @@
-const GmailLogoSVG = ({ style }: any) => {
+const GmailLogoSVG = () => {
   return (
     <svg
       id="fi_2111432"

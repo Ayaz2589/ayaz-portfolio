@@ -1,4 +1,5 @@
-import { Button, Box, Flex } from "@chakra-ui/react";
+import { Button, Box } from "@chakra-ui/react";
+import { INavbarAction } from "@/pages/index";
 
 const styles = {
   width: "100%",
@@ -10,10 +11,14 @@ const styles = {
   padding: "0.2rem 10rem",
 };
 
-const MobileNavigation = ({ navbarActions }: any) => {
+const MobileNavigation = ({
+  navbarActions,
+}: {
+  navbarActions: INavbarAction[];
+}) => {
   return (
     <Box sx={styles}>
-      {navbarActions.map((item: any) => {
+      {navbarActions.map((item: INavbarAction) => {
         return (
           <Box key={item.title}>
             {/* @ts-ignore */}

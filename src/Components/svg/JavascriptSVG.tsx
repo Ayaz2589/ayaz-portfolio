@@ -1,4 +1,4 @@
-const JavascriptSVG = ({ style }: any) => {
+const JavascriptSVG = () => {
   return (
     <svg
       style={style}

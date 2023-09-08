@@ -1,4 +1,4 @@
-const LaptopSVG = ({ style }: any) => {
+const LaptopSVG = () => {
   return (
     <svg
       id="fi_6062646"

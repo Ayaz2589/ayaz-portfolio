@@ -1,4 +1,4 @@
-const FigmaSVG = ({ style }: any) => {
+const FigmaSVG = () => {
   return (
     <svg
       style={style}

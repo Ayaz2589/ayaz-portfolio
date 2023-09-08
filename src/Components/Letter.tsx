@@ -17,7 +17,9 @@ interface IProps {
   startAnimation: boolean;
 }
 
-const findNextClass = (className: any) => {
+const findNextClass = (className: string) => {
+  if (typeof className !== "string") return;
+  // @ts-ignore
   return `letter-${parseInt(className.split("-").pop()) + 1}`;
 };
 

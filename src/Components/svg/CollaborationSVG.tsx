@@ -1,4 +1,4 @@
-const CollaborationSVG = ({ style }: any) => {
+const CollaborationSVG = () => {
   return (
     <svg
       width="272"

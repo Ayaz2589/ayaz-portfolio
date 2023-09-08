@@ -11,7 +11,7 @@ const styles = {
 };
 
 interface IProps {
-  navbarActions: any;
+  navbarActions: INavbarAction[];
   scrollPosition: number;
 }
 
@@ -28,7 +28,6 @@ const DesktopNavigation = ({ navbarActions, scrollPosition }: IProps) => {
       {navbarActions.map((item: INavbarAction) => {
         return (
           <Box key={item.title}>
-            {/* @ts-ignore */}
             <Button
               variant="ghost"
               _hover={{ backgroundColor: "transparent", color: "red.100" }}

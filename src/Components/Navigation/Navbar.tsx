@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { Box } from "@chakra-ui/react";
 import { DesktopNavigation, MobileNavigation } from "@/Components/Navigation";
+import { INavbarAction } from "@/pages/index";
 
 interface IProps {
-  navbarActions: any;
+  navbarActions: INavbarAction[];
   isMobile: boolean;
   scrollPosition: number;
 }

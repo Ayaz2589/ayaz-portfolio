@@ -17,7 +17,18 @@ import JetBlueLogoSVG from "./svg/JetBlueLogoSVG";
 import scrollAnimation from "@/utils/scrollAnimation";
 import { caseStudyCopy } from "@/utils/copy";
 
-const caseStudies = [
+interface ICaseStudy {
+  name: string;
+  description: string;
+  logo: JSX.Element;
+  linkToCaseStudy: string;
+  isDisabled: boolean;
+  styles: {
+    backgroundColor: string;
+  };
+}
+
+const caseStudies: ICaseStudy[] = [
   {
     name: "Property Pal",
     description: `A property management tool targeting multi-family home owners, with a strong emphasis on user-friendliness and affordability.`,
@@ -136,7 +147,7 @@ const CaseStudyDetailsDesktop = () => {
   );
 };
 
-const CaseStudyCard = ({ caseStudy }: any) => {
+const CaseStudyCard = ({ caseStudy }: { caseStudy: ICaseStudy }) => {
   return (
     <Card
       backgroundColor={

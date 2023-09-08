@@ -22,7 +22,6 @@ const style = {
   height: "100vh",
   minHeight: "800px",
   display: "flex",
-  // justifyContent: "space-between",
   margin: { base: "0 1rem", md: "0rem 0rem 0rem 4rem" },
   alignItems: { base: "none", md: "center" },
 };
@@ -44,16 +43,22 @@ interface IProps {
   isMobile: boolean;
 }
 
+interface ISkill {
+  title: string;
+  copy: string;
+  animation: { appear: string; disappear: string; screenPosition: number };
+}
+
 const Resume = ({ resumeRef, scrollPosition, isMobile }: IProps) => {
   return (
     <Box ref={resumeRef} sx={style}>
-      <ResumeDetails resumeRef={resumeRef} scrollPosition={scrollPosition} />
+      <ResumeDetails scrollPosition={scrollPosition} />
       {isMobile ? <DesktopIcons /> : null}
     </Box>
   );
 };
 
-const skills = [
+const skills: ISkill[] = [
   {
     title: "Design",
     copy: resumeDesignCopy,
@@ -76,7 +81,7 @@ const skills = [
   },
 ];
 
-const ResumeDetails = ({ resumeRef, scrollPosition }: any) => {
+const ResumeDetails = ({ scrollPosition }: { scrollPosition: number }) => {
   return (
     <Box sx={{ width: { base: "85%", md: "65%" } }}>
       <Box
@@ -127,7 +132,13 @@ const ResumeDetails = ({ resumeRef, scrollPosition }: any) => {
   );
 };
 
-const SkillSection = ({ skill, scrollPosition }: any) => {
+const SkillSection = ({
+  skill,
+  scrollPosition,
+}: {
+  skill: ISkill;
+  scrollPosition: number;
+}) => {
   const { title, copy, animation } = skill;
   return (
     <Box

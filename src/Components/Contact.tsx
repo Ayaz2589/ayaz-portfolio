@@ -76,7 +76,13 @@ const ContactMeDetails = () => {
   );
 };
 
-const ContactButton = ({ Component, href }: any) => {
+const ContactButton = ({
+  Component,
+  href,
+}: {
+  Component: React.Component | any;
+  href: string;
+}) => {
   return (
     <Link target="_blank" href={href}>
       <Button variant="ghost" size="lg" sx={{ padding: "3rem 1rem" }}>
