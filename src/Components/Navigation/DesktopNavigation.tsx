@@ -5,10 +5,9 @@ import { INavbarAction } from "@/pages/index";
 const styles = {
   width: "100%",
   display: "flex",
-  justifyContent: "space-around",
+  justifyContent: "flex-end",
   position: "fixed",
   backgroundColor: "transparent",
-  padding: "3rem 10rem",
 };
 
 interface IProps {

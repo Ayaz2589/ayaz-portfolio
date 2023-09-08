@@ -11,7 +11,6 @@ const style = {
 };
 
 const textStyle = {
-  width: { base: "90%", md: "100%" },
   margin: { base: "0 1rem", md: "0rem 0rem 0rem 4rem" },
   fontWeight: "light",
   fontSize: { base: "1rem", lg: "1.15rem", "2xl": "1.5rem" },
@@ -19,25 +18,30 @@ const textStyle = {
 };
 
 interface IProps {
-  scrollPosition: number;
+  isMobile: boolean;
   contactRef: any;
 }
 
-const Contact = ({ scrollPosition, contactRef }: IProps) => {
+const Contact = ({ isMobile, contactRef }: IProps) => {
   return (
     <Box
       ref={contactRef}
-      sx={{ ...style, display: "flex", alignItems: "center" }}
+      sx={{
+        ...style,
+        display: "flex",
+        alignItems: "center",
+        flexDirection: isMobile ? "row" : "column",
+      }}
     >
       <ContactMeDetails />
-      <ViewRepo />
+      <ViewRepo isMobile={isMobile} />
     </Box>
   );
 };
 
 const ContactMeDetails = () => {
   return (
-    <Box sx={{ width: "50%" }}>
+    <Box sx={{ width: { base: "80%", md: "50%" } }}>
       <Text
         sx={{
           ...textStyle,
@@ -47,7 +51,7 @@ const ContactMeDetails = () => {
       >
         Contact Me
       </Text>
-      <Text sx={{ ...textStyle, width: "70%" }}>{contactCopy}</Text>
+      <Text sx={{ ...textStyle }}>{contactCopy}</Text>
       <Box
         sx={{
           display: "flex",
@@ -82,15 +86,16 @@ const ContactButton = ({ Component, href }: any) => {
   );
 };
 
-const ViewRepo = () => {
+const ViewRepo = ({ isMobile }: { isMobile: boolean }) => {
   return (
     <Box
       sx={{
         display: "flex",
         width: "50%",
         flexDirection: "column",
-        // justifyContent: "center",
         alignItems: "center",
+        margin: !isMobile ? "3rem 0rem" : "0rem",
+        padding: !isMobile ? "0rem 0rem 7rem 0rem" : "0rem",
       }}
     >
       <Link
@@ -106,6 +111,7 @@ const ViewRepo = () => {
           sx={{
             fontSize: { base: "1rem", lg: "1.15rem", "2xl": "1.5rem" },
             letterSpacing: "0.15rem",
+            textAlign: !isMobile ? "center" : "left",
           }}
         >{`Enjoyed the website? Want to see the code?`}</Text>
         <Button

@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import Head from "next/head";
-import { Box, useMediaQuery } from "@chakra-ui/react";
+import { Box, useMediaQuery, Text } from "@chakra-ui/react";
 import styles from "@/styles/Home.module.css";
 import {
   Navbar,
@@ -185,7 +185,7 @@ export default function Home() {
             caseStudiesRef={caseStudiesRef}
             isMobile={isMobile}
           />
-          <Contact scrollPosition={scrollPosition} contactRef={contactRef} />
+          <Contact isMobile={isMobile} contactRef={contactRef} />
         </Box>
       </main>
     </>
