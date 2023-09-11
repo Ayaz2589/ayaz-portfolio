@@ -85,7 +85,7 @@ const CaseStudies = ({ scrollPosition, caseStudiesRef, isMobile }: IProps) => {
         <Box
           sx={{
             width: { base: "", md: "50%" },
-            position: "relative",
+            position: { base: "none", md: "relative" },
             opacity: 0,
           }}
           className={scrollAnimation(caseStudyTitleAnimation, scrollPosition)}
@@ -97,7 +97,7 @@ const CaseStudies = ({ scrollPosition, caseStudiesRef, isMobile }: IProps) => {
               sx={{
                 fontSize: "3rem",
                 fontWeight: "light",
-                padding: "1rem 0rem 0rem 1rem",
+                padding: "2rem 0rem 0rem 1rem",
               }}
             >
               Case Studies
@@ -155,7 +155,7 @@ const CaseStudyCard = ({ caseStudy }: { caseStudy: ICaseStudy }) => {
       }
       sx={{
         width: { base: "90%", md: "60%" },
-        margin: "1rem 0rem",
+        margin: { base: "0.5rem 0rem", md: "1rem 0rem" },
         borderRadius: "1rem",
       }}
     >
@@ -169,7 +169,9 @@ const CaseStudyCard = ({ caseStudy }: { caseStudy: ICaseStudy }) => {
         }
       >
         <CardHeader>{caseStudy.logo}</CardHeader>
-        <CardBody color="white">{caseStudy.description}</CardBody>
+        <CardBody color="white" sx={{ padding: "0rem 1rem" }}>
+          {caseStudy.description}
+        </CardBody>
         <CardFooter
           sx={{
             display: "flex",
