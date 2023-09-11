@@ -12,7 +12,7 @@ const style = {
   position: "relative",
   display: "flex",
   flexDirection: "column",
-  justifyContent: "center",
+  justifyContent: { base: "flex-start", md: "center" },
   opacity: 0,
   zIndex: 1,
   color: "white",
@@ -20,7 +20,7 @@ const style = {
 
 const textStyle = {
   width: { base: "90%", md: "20rem", lg: "25rem", xl: "30rem", "2xl": "45rem" },
-  margin: { base: "0 1rem", md: "0 4rem" },
+  margin: { base: "0rem 1rem", md: "0rem 0rem 0rem 4rem" },
   fontWeight: "light",
   fontSize: { base: "1rem", lg: "1.15rem", "2xl": "1.6rem" },
   letterSpacing: "0.15rem",
@@ -40,12 +40,12 @@ const AboutMe = ({ scrollPosition, aboutRef }: IProps) => {
         className={scrollAnimation(aboutMeTitleAnimation, scrollPosition)}
         sx={style}
       >
-        {/* @ts-ignore */}
         <Text
           sx={{
             ...textStyle,
             fontSize: "3rem",
             fontWeight: "light",
+            margin: { base: "2rem 0rem 0rem 1rem", md: "0rem 0rem 0rem 4rem" },
           }}
         >
           About Me

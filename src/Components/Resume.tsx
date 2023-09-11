@@ -29,12 +29,12 @@ const style = {
 const skillsTextStyle = {
   fontWeight: "light",
   letterSpacing: "0.15rem",
-  fontSize: { base: "0.8rem", lg: "1rem", "2xl": "1.5rem" },
+  fontSize: { base: "1rem", lg: "1rem", "2xl": "1.5rem" },
 };
 
 const skillsHeaderTextStyle = {
   letterSpacing: "0.15rem",
-  fontSize: { base: "1.1rem", lg: "1.7rem", "2xl": "2rem" },
+  fontSize: { base: "1.2rem", lg: "1.7rem", "2xl": "2rem" },
 };
 
 interface IProps {
@@ -83,13 +83,13 @@ const skills: ISkill[] = [
 
 const ResumeDetails = ({ scrollPosition }: { scrollPosition: number }) => {
   return (
-    <Box sx={{ width: { base: "85%", md: "65%" } }}>
+    <Box sx={{ width: { base: "100%", md: "65%" } }}>
       <Box
         sx={{
           width: "100%",
           position: "relative",
           opacity: 0,
-          margin: "1rem 0",
+          margin: "2rem 0rem 0rem 0rem",
         }}
         className={scrollAnimation(resumeTitleAnimation, scrollPosition)}
       >
@@ -111,24 +111,29 @@ const ResumeDetails = ({ scrollPosition }: { scrollPosition: number }) => {
           />
         );
       })}
-      <Link href="https://resume.creddle.io/resume/c062hkrfrri" target="_blank">
-        {" "}
-        <Button
-          size="lg"
-          colorScheme="orange"
-          sx={{
-            opacity: 0,
-            position: "relative",
-            margin: "2rem 0rem 0rem 1rem",
-            borderRadius: "2rem",
-            boxShadow: "0px 3px 15px -8px rgba(0,0,0,0.75)",
-          }}
-          className={scrollAnimation(buttonAnimation, scrollPosition)}
-        >
-          View Resume
-        </Button>
-      </Link>
+      <ViewResumeButton scrollPosition={scrollPosition} />
     </Box>
+  );
+};
+
+const ViewResumeButton = ({ scrollPosition }: { scrollPosition: number }) => {
+  return (
+    <Link href="https://resume.creddle.io/resume/c062hkrfrri" target="_blank">
+      <Button
+        size="lg"
+        colorScheme="orange"
+        sx={{
+          opacity: 0,
+          position: "relative",
+          margin: "2rem 0rem 0rem 0rem",
+          borderRadius: "2rem",
+          boxShadow: "0px 3px 15px -8px rgba(0,0,0,0.75)",
+        }}
+        className={scrollAnimation(buttonAnimation, scrollPosition)}
+      >
+        View Resume
+      </Button>
+    </Link>
   );
 };
 
@@ -142,7 +147,7 @@ const SkillSection = ({
   const { title, copy, animation } = skill;
   return (
     <Box
-      sx={{ position: "relative", opacity: 0, margin: "1.5rem 0" }}
+      sx={{ position: "relative", opacity: 0, margin: "0rem 0rem 1rem 0rem" }}
       className={scrollAnimation(animation, scrollPosition)}
     >
       <Text sx={skillsHeaderTextStyle}>{title}</Text>

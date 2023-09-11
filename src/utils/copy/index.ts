@@ -1,11 +1,11 @@
 export const aboutMeCopy = `With seven years of experience as both a frontend developer and a recent UX/UI certification from BrainStation, I've honed my skills in both areas. Collaborating closely with design teams, I've developed a keen eye for user-centric design principles. As a frontend developer and designer, I bring strong technical skills in HTML, CSS, and JavaScript (especially React), seamlessly bridging the gap between design and development. Thanks to my innate empathy, I excel in productive discussions with cross-functional teams. Additionally, I'm proficient in AI tools like Chat GPT and GitHub Co-Pilot, enhancing my efficiency and innovation in design. Feel free to reach out to discuss how I can contribute to your projects!`;
 
-export const resumeDesignCopy = `Illustration & UI Graphics, Strategy & Vision Presentation, User
+export const resumeDesignCopy = `Illustration & UI Graphics, User
             Flows, Task Flows, Concept Sketches, Wireframes, Figma Advance
             Features (Auto-Layout, Components, Variables, Smart Animation),
             Rapid Prototyping using Figma.`;
 
-export const resumeDevelopmentCopy = `HTML, CSS, Javascript (Next.js, React, Node.js), Git, VSCode,
+export const resumeDevelopmentCopy = `HTML, CSS (Tailwind, MUI, Chakra UI), Javascript (Next.js, React, Node.js),
             Storybook.`;
 
 export const resumeResearchCopy = `Data Analysis (Data Dog, Statista), User Interviews, A/B Testing,
