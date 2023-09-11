@@ -29,8 +29,8 @@ const Contact = ({ isMobile, contactRef }: IProps) => {
       sx={{
         ...style,
         display: "flex",
-        alignItems: "center",
-        flexDirection: isMobile ? "row" : "column",
+        flexDirection: { base: "column", md: "row" },
+        margin: { base: "2rem 0rem 4rem 0rem", md: "0rem" },
       }}
     >
       <ContactMeDetails />
@@ -41,7 +41,7 @@ const Contact = ({ isMobile, contactRef }: IProps) => {
 
 const ContactMeDetails = () => {
   return (
-    <Box sx={{ width: { base: "80%", md: "50%" } }}>
+    <Box sx={{ width: { base: "100%", md: "50%" }, alignSelf: "center" }}>
       <Text
         sx={{
           ...textStyle,
@@ -51,12 +51,19 @@ const ContactMeDetails = () => {
       >
         Contact Me
       </Text>
-      <Text sx={{ ...textStyle }}>{contactCopy}</Text>
+      <Text
+        sx={{
+          ...textStyle,
+        }}
+      >
+        {contactCopy}
+      </Text>
       <Box
         sx={{
           display: "flex",
-          width: "80%",
-          margin: "1rem 0rem 0rem 3rem",
+          justifyContent: { base: "center", md: "flex-start" },
+          width: "100%",
+          margin: { base: "0rem", md: "1rem 0rem 0rem 3rem" },
         }}
       >
         <ContactButton
@@ -97,29 +104,20 @@ const ViewRepo = ({ isMobile }: { isMobile: boolean }) => {
     <Box
       sx={{
         display: "flex",
-        width: "50%",
         flexDirection: "column",
+        justifyContent: "center",
         alignItems: "center",
-        margin: !isMobile ? "3rem 0rem" : "0rem",
-        padding: !isMobile ? "0rem 0rem 7rem 0rem" : "0rem",
+        width: { base: "100%", md: "50%" },
       }}
     >
-      <Link
-        target="_blank"
-        href="https://github.com/Ayaz2589/ayaz-portfolio"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
+      <Text
+        sx={{
+          fontSize: { base: "1rem", lg: "1.15rem", "2xl": "1.5rem" },
+          letterSpacing: "0.15rem",
+          textAlign: !isMobile ? "center" : "left",
         }}
-      >
-        <Text
-          sx={{
-            fontSize: { base: "1rem", lg: "1.15rem", "2xl": "1.5rem" },
-            letterSpacing: "0.15rem",
-            textAlign: !isMobile ? "center" : "left",
-          }}
-        >{`Enjoyed the website? Want to see the code?`}</Text>
+      >{`Enjoyed the website? Want to see the code?`}</Text>
+      <Link target="_blank" href="https://github.com/Ayaz2589/ayaz-portfolio">
         <Button
           sx={{
             padding: "3rem 1rem",

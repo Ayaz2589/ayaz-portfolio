@@ -3,9 +3,9 @@ const GmailLogoSVG = () => {
     <svg
       id="fi_5968534"
       enable-background="new 0 0 512 512"
-      height="90"
+      height="85"
       viewBox="0 0 512 512"
-      width="90"
+      width="85"
       xmlns="http://www.w3.org/2000/svg"
     >
       <g>

@@ -59,10 +59,7 @@ export default function Home() {
   const caseStudiesRef = useRef(null);
   const contactRef = useRef(null);
 
-  const handleNavIconClicked = (
-    refToscrollTo: any,
-    title: string
-  ) => {
+  const handleNavIconClicked = (refToscrollTo: any, title: string) => {
     if (!refToscrollTo) return;
     changeIcon(title);
     refToscrollTo.current.scrollIntoView({ behavior: "smooth" });
@@ -169,7 +166,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
+      <main>
         <Box w="100%">
           <Navbar
             navbarActions={navbarActions}
