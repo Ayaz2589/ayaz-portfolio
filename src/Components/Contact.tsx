@@ -30,7 +30,7 @@ const Contact = ({ isMobile, contactRef }: IProps) => {
         ...style,
         display: "flex",
         flexDirection: { base: "column", md: "row" },
-        margin: { base: "2rem 0rem 4rem 0rem", md: "0rem" },
+        margin: { base: "2rem 0rem 9rem 0rem", md: "0rem" },
       }}
     >
       <ContactMeDetails />
