@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useContext } from "react";
 import Head from "next/head";
 import { Box, useMediaQuery, Text } from "@chakra-ui/react";
 import styles from "@/styles/Home.module.css";
@@ -50,9 +50,6 @@ enum Title {
 }
 
 export default function Home() {
-  const scrollPosition = useScrollPosition();
-  const [isMobile] = useMediaQuery("(min-width: 900px)");
-
   const introRef = useRef(null);
   const aboutRef = useRef(null);
   const resumeRef = useRef(null);
@@ -168,24 +165,12 @@ export default function Home() {
       </Head>
       <main>
         <Box w="100%">
-          <Navbar
-            navbarActions={navbarActions}
-            scrollPosition={scrollPosition}
-            isMobile={isMobile}
-          />
+          <Navbar navbarActions={navbarActions} />
           <Intro introRef={introRef} />
-          <AboutMe scrollPosition={scrollPosition} aboutRef={aboutRef} />
-          <Resume
-            scrollPosition={scrollPosition}
-            resumeRef={resumeRef}
-            isMobile={isMobile}
-          />
-          <CaseStidies
-            scrollPosition={scrollPosition}
-            caseStudiesRef={caseStudiesRef}
-            isMobile={isMobile}
-          />
-          <Contact isMobile={isMobile} contactRef={contactRef} />
+          <AboutMe aboutRef={aboutRef} />
+          <Resume resumeRef={resumeRef} />
+          <CaseStidies caseStudiesRef={caseStudiesRef} />
+          <Contact contactRef={contactRef} />
         </Box>
       </main>
     </>

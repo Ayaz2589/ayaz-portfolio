@@ -1,7 +1,7 @@
-import { Box, Text, Button } from "@chakra-ui/react";
+import { Box, Text, Button, useMediaQuery } from "@chakra-ui/react";
 import Link from "next/link";
 
-import { scrollAnimation } from "@/utils";
+import { scrollAnimation, useScrollPosition } from "@/utils";
 import CollaborationSVG from "./svg/CollaborationSVG";
 import {
   resumeTitleAnimation,
@@ -38,9 +38,7 @@ const skillsHeaderTextStyle = {
 };
 
 interface IProps {
-  scrollPosition: number;
   resumeRef: any;
-  isMobile: boolean;
 }
 
 interface ISkill {
@@ -49,7 +47,9 @@ interface ISkill {
   animation: { appear: string; disappear: string; screenPosition: number };
 }
 
-const Resume = ({ resumeRef, scrollPosition, isMobile }: IProps) => {
+const Resume = ({ resumeRef }: IProps) => {
+  const scrollPosition = useScrollPosition();
+  const [isMobile] = useMediaQuery("(min-width: 900px)");
   return (
     <Box ref={resumeRef} sx={style}>
       <ResumeDetails scrollPosition={scrollPosition} />

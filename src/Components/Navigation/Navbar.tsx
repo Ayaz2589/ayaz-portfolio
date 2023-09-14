@@ -1,15 +1,17 @@
 import { useState } from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, useMediaQuery } from "@chakra-ui/react";
 import { DesktopNavigation, MobileNavigation } from "@/Components/Navigation";
 import { INavbarAction } from "@/pages/index";
+import { useScrollPosition } from "@/utils";
 
 interface IProps {
   navbarActions: INavbarAction[];
-  isMobile: boolean;
-  scrollPosition: number;
 }
 
-const Navbar = ({ navbarActions, isMobile, scrollPosition }: IProps) => {
+const Navbar = ({ navbarActions }: IProps) => {
+  const scrollPosition = useScrollPosition();
+  const [isMobile] = useMediaQuery("(min-width: 900px)");
+
   return (
     <Box width="100%" position="absolute" zIndex="2">
       {isMobile ? (

@@ -1,4 +1,4 @@
-import { Box, Text, Button } from "@chakra-ui/react";
+import { Box, Text, Button, useMediaQuery } from "@chakra-ui/react";
 import Link from "next/link";
 
 import { GmailLogoSVG, LinkedInLogoSVG, GithubLogoSVG, LaptopSVG } from "./svg";
@@ -18,11 +18,12 @@ const textStyle = {
 };
 
 interface IProps {
-  isMobile: boolean;
   contactRef: any;
 }
 
-const Contact = ({ isMobile, contactRef }: IProps) => {
+const Contact = ({ contactRef }: IProps) => {
+  const [isMobile] = useMediaQuery("(min-width: 900px)");
+
   return (
     <Box
       ref={contactRef}

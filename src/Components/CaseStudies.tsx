@@ -5,6 +5,7 @@ import {
   CardHeader,
   CardBody,
   CardFooter,
+  useMediaQuery,
 } from "@chakra-ui/react";
 import Link from "next/link";
 
@@ -16,6 +17,7 @@ import PropertyPalLogoSVG from "./svg/PropertyPalLogoSVG";
 import JetBlueLogoSVG from "./svg/JetBlueLogoSVG";
 import scrollAnimation from "@/utils/scrollAnimation";
 import { caseStudyCopy } from "@/utils/copy";
+import { useScrollPosition } from "@/utils";
 
 interface ICaseStudy {
   name: string;
@@ -67,12 +69,13 @@ const textStyle = {
 };
 
 interface IProps {
-  scrollPosition: number;
   caseStudiesRef: any;
-  isMobile: boolean;
 }
 
-const CaseStudies = ({ scrollPosition, caseStudiesRef, isMobile }: IProps) => {
+const CaseStudies = ({ caseStudiesRef }: IProps) => {
+  const scrollPosition = useScrollPosition();
+  const [isMobile] = useMediaQuery("(min-width: 900px)");
+
   return (
     <Box ref={caseStudiesRef} sx={style}>
       <Box

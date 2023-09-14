@@ -1,9 +1,10 @@
+import React from "react";
 import { Box, Text } from "@chakra-ui/react";
 import Image from "next/image";
 import { scrollAnimation } from "@/utils";
 import { aboutMeTitleAnimation } from "@/utils/animations";
 import { aboutMeCopy } from "@/utils/copy";
-import React from "react";
+import { useScrollPosition } from "@/utils";
 
 const style = {
   height: "100vh",
@@ -28,11 +29,11 @@ const textStyle = {
 };
 
 interface IProps {
-  scrollPosition: number;
   aboutRef: any;
 }
 
-const AboutMe = ({ scrollPosition, aboutRef }: IProps) => {
+const AboutMe = ({ aboutRef }: IProps) => {
+  const scrollPosition = useScrollPosition();
   return (
     <Box ref={aboutRef} position="relative">
       <AboutMeBackground />
