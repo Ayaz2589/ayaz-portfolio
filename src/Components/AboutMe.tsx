@@ -4,7 +4,7 @@ import Image from "next/image";
 import { scrollAnimation } from "@/utils";
 import { aboutMeTitleAnimation } from "@/utils/animations";
 import { aboutMeCopy } from "@/utils/copy";
-import { useScrollPosition } from "@/utils";
+import { useScrollPosition, getSectionPosition } from "@/utils";
 
 const style = {
   height: "100vh",

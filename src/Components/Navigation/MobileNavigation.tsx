@@ -1,5 +1,7 @@
+import { useEffect } from "react";
 import { Button, Box } from "@chakra-ui/react";
 import { INavbarAction } from "@/pages/index";
+import { getSectionPosition } from "@/utils";
 
 const styles = {
   width: "100%",
@@ -13,9 +15,17 @@ const styles = {
 
 const MobileNavigation = ({
   navbarActions,
+  scrollPosition,
+  changeIcon,
 }: {
   navbarActions: INavbarAction[];
+  scrollPosition: number;
+  changeIcon: Function;
 }) => {
+  useEffect(() => {
+    changeIcon(getSectionPosition(scrollPosition));
+  }, [scrollPosition]);
+
   return (
     <Box sx={styles}>
       {navbarActions.map((item: INavbarAction) => {

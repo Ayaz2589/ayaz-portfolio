@@ -6,9 +6,10 @@ import { useScrollPosition } from "@/utils";
 
 interface IProps {
   navbarActions: INavbarAction[];
+  changeIcon: Function;
 }
 
-const Navbar = ({ navbarActions }: IProps) => {
+const Navbar = ({ navbarActions, changeIcon }: IProps) => {
   const scrollPosition = useScrollPosition();
   const [isMobile] = useMediaQuery("(min-width: 900px)");
 
@@ -20,7 +21,11 @@ const Navbar = ({ navbarActions }: IProps) => {
           scrollPosition={scrollPosition}
         />
       ) : (
-        <MobileNavigation navbarActions={navbarActions} />
+        <MobileNavigation
+          navbarActions={navbarActions}
+          scrollPosition={scrollPosition}
+          changeIcon={changeIcon}
+        />
       )}
     </Box>
   );

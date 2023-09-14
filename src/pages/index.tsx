@@ -41,7 +41,7 @@ export interface INavbarAction {
   icon?: JSX.Element;
 }
 
-enum Title {
+export enum Title {
   HOME = "Home",
   ABOUT = "About Me",
   RESUME = "Resume",
@@ -165,7 +165,7 @@ export default function Home() {
       </Head>
       <main>
         <Box w="100%">
-          <Navbar navbarActions={navbarActions} />
+          <Navbar navbarActions={navbarActions} changeIcon={changeIcon} />
           <Intro introRef={introRef} />
           <AboutMe aboutRef={aboutRef} />
           <Resume resumeRef={resumeRef} />
